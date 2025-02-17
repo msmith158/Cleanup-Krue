@@ -1,15 +1,17 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Mitchel.UISystems;
 using TMPro;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider))]
 public class TestInteractionField : MonoBehaviour
 {
-    [SerializeField] private TestDialogueSystem dialogueSys;
+    [SerializeField] private DialogueSystem dialogueSys;
     [SerializeField] private TextMeshPro interactionText;
     private bool withinRange = false;
+    private bool isDialogueActivated = false;
 
     private void Start()
     {
@@ -20,7 +22,16 @@ public class TestInteractionField : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && withinRange)
         {
-            dialogueSys.StartDialogue();
+            if (!isDialogueActivated)
+            {
+                dialogueSys.InitiateDialogue();
+                isDialogueActivated = true;
+            }
+            else
+            {
+                dialogueSys.ExitDialogue();
+                isDialogueActivated = false;
+            }
         }
     }
     
