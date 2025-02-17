@@ -8,6 +8,7 @@ using UnityEngine;
 [RequireComponent(typeof(Collider))]
 public class TestInteractionField : MonoBehaviour
 {
+    [SerializeField] private TestController player;
     [SerializeField] private DialogueSystem dialogueSys;
     [SerializeField] private TextMeshPro interactionText;
     private bool withinRange = false;
@@ -20,16 +21,18 @@ public class TestInteractionField : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && withinRange)
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            if (!isDialogueActivated)
+            if (!isDialogueActivated && withinRange)
             {
                 dialogueSys.InitiateDialogue();
+                player.CanMove = false;
                 isDialogueActivated = true;
             }
             else
             {
                 dialogueSys.ExitDialogue();
+                player.CanMove = true;
                 isDialogueActivated = false;
             }
         }

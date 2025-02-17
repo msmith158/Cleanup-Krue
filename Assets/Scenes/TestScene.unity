@@ -633,8 +633,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 625, y: -50}
-  m_SizeDelta: {x: 768, y: 768}
+  m_AnchoredPosition: {x: 652, y: 130}
+  m_SizeDelta: {x: 768, y: 660}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1374877900
 MonoBehaviour:
@@ -656,7 +656,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 034e66d0992d60c43bef9e72c98e97ac, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 908df6b2345e09c42bf227d92027b896, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1090,7 +1090,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  npcSpriteInDelay: 0.1
+  npcSpriteInDelay: 0.08
   spriteSlideInAmount: 50
   spriteFadeInTime: 0.15
   panelFadeOutTime: 0.1
@@ -1247,6 +1247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 088949038d00ff54fb3718147fe61d24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CanMove: 1
   playerSpeed: 3
   sprintModifier: 2
 --- !u!1 &1744018424
@@ -1362,13 +1363,18 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2880643856009237333, guid: 62d0dd6e43876c3478267cf29d0dbaff,
         type: 3}
+      propertyPath: m_Color.a
+      value: 0.78431374
+      objectReference: {fileID: 0}
+    - target: {fileID: 2880643856009237333, guid: 62d0dd6e43876c3478267cf29d0dbaff,
+        type: 3}
       propertyPath: m_Color.b
-      value: 1
+      value: 0.95668083
       objectReference: {fileID: 0}
     - target: {fileID: 2880643856009237333, guid: 62d0dd6e43876c3478267cf29d0dbaff,
         type: 3}
       propertyPath: m_Color.g
-      value: 1
+      value: 0.8820755
       objectReference: {fileID: 0}
     - target: {fileID: 2880643856009237333, guid: 62d0dd6e43876c3478267cf29d0dbaff,
         type: 3}
@@ -1658,6 +1664,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08d41b621e3bbfd4eb29e8cf1a48907c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1714797503}
   dialogueSys: {fileID: 1600295426}
   interactionText: {fileID: 1484739020}
 --- !u!1660057539 &9223372036854775807
