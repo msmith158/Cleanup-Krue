@@ -30,6 +30,7 @@ public class TestInteractionField : MonoBehaviour
         {
             if (!isDialogueActivated && withinRange)
             {
+                OnInteract.Invoke();
                 DialogueTransitions.Instance.InitiateDialogue();
                 player.CanMove = false;
                 isDialogueActivated = true;

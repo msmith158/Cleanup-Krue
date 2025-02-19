@@ -1,7 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -16,6 +14,7 @@ namespace Mitchel.UISystems
         [SerializeField] private AnimationCurve panelSlideInCurve;
         [SerializeField] private float panelSlideInAmount;
         [SerializeField] private float panelFadeInTime;
+        [Space(5)]
         [SerializeField] private AnimationCurve spriteSlideInCurve;
         [SerializeField] private float npcSpriteInDelay;
         [SerializeField] private float spriteSlideInAmount;
@@ -23,6 +22,7 @@ namespace Mitchel.UISystems
 
         [Header("Transition Out Effect Settings")] 
         [SerializeField] private float panelFadeOutTime;
+        [Space(5)]
         [SerializeField] private float npcSpriteOutDelay;
         [SerializeField] private float spriteFadeOutTime;
         

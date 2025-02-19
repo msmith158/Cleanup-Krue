@@ -1130,11 +1130,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18da0729aea834f43ad837143b460187, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueData:
-  - Label: 
-    dialogueLine: {fileID: 0}
-    charDelayTime: 0
-    dialogueLineSfx: {fileID: 0}
+  dialogueHeader: {fileID: 1769017072}
+  dialogueText: {fileID: 1769017071}
 --- !u!1 &1714797497
 GameObject:
   m_ObjectHideFlags: 0
@@ -1811,9 +1808,9 @@ MonoBehaviour:
   OnInteract:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2133681887}
-        m_TargetAssemblyTypeName: TestInteractionField, Assembly-CSharp
-        m_MethodName: Interact
+      - m_Target: {fileID: 1600295427}
+        m_TargetAssemblyTypeName: DialogueSystem, Assembly-CSharp
+        m_MethodName: PrintDialogue
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 4900000, guid: 66e9c29bf7b91a8458c0cae49c27e041,
