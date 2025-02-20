@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -8,7 +9,7 @@ namespace Mitchel.UISystems
 {
     public class DialogueTransitions : MonoBehaviour
     {
-        public static DialogueTransitions Instance { get; private set; }
+        public static event Action InteractionFieldReactivate;
         
         [Header("Transition In Effect Settings")]
         [SerializeField] private AnimationCurve panelSlideInCurve;
@@ -25,12 +26,12 @@ namespace Mitchel.UISystems
         [Space(5)]
         [SerializeField] private float npcSpriteOutDelay;
         [SerializeField] private float spriteFadeOutTime;
-        
-        [Header("Object References")]
+
+        [Header("Object References")] 
+        [SerializeField] private DialogueSystem dialogueSystem;
         [SerializeField] private RectTransform dialoguePanel;
         [SerializeField] private TextMeshProUGUI dialogueHeader;
         [SerializeField] private TextMeshProUGUI dialogueText;
-        [SerializeField] private AudioClip defaultDialogueSfx;
         [SerializeField] private Image testSprite;
 
         public bool ReadyToProceed = false;
@@ -41,17 +42,6 @@ namespace Mitchel.UISystems
         private Color opaqueTextColour;
         private Color transparentTextColour;
         private Image dialoguePanelImage;
-
-        // Initialise the singleton for use by other scripts
-        private void Awake()
-        {
-            if (Instance == null)
-            {
-                Instance = this;
-                Debug.Log("Dialogue transitions singleton has been made. "); 
-            }
-            else Destroy(gameObject);
-        }
 
         private void Start()
         {
@@ -66,7 +56,7 @@ namespace Mitchel.UISystems
                 new Color(dialogueHeader.color.r, dialogueHeader.color.g, dialogueHeader.color.b, 0);
         }
         
-        public void InitiateDialogue()
+        public void EnterDialogue()
         {
             dialoguePanel.gameObject.SetActive(true);
             StartCoroutine(BeginPanelTransitionIn());
@@ -115,7 +105,7 @@ namespace Mitchel.UISystems
 
             dialoguePanelImage.color = opaquePanelColour;
             dialoguePanel.position = newPanelPos;
-            
+            dialogueSystem.PrintDialogue();
             Debug.Log("Panel transition in is finished.");
         }
 
@@ -191,6 +181,7 @@ namespace Mitchel.UISystems
 
             testSprite.color = transparentTestSpriteColour;
             dialoguePanel.gameObject.SetActive(false);
+            InteractionFieldReactivate?.Invoke(); // Send a message to the interaction field to let it know it can re-activate
             Debug.Log("Sprite transition out is done.");
         }
     }

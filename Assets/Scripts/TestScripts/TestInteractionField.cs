@@ -19,9 +19,12 @@ public class TestInteractionField : MonoBehaviour
     private void Start()
     {
         interactionText.enabled = false;
+        OnInteract ??= new UnityEvent(); // "??=" is shorthand for a null check and will execute if the variable is null
+    }
 
-        if (OnInteract == null)
-            OnInteract = new UnityEvent();
+    private void OnEnable()
+    {
+        DialogueTransitions.InteractionFieldReactivate += ReactivateField;
     }
 
     private void Update()
@@ -31,17 +34,16 @@ public class TestInteractionField : MonoBehaviour
             if (!isDialogueActivated && withinRange)
             {
                 OnInteract.Invoke();
-                DialogueTransitions.Instance.InitiateDialogue();
                 player.CanMove = false;
                 isDialogueActivated = true;
             }
-            else if (isDialogueActivated && DialogueTransitions.Instance.ReadyToProceed)
-            {
-                DialogueTransitions.Instance.ExitDialogue();
-                player.CanMove = true;
-                isDialogueActivated = false;
-            }
         }
+    }
+
+    private void ReactivateField()
+    {
+        isDialogueActivated = false;
+        player.CanMove = true;
     }
     
     private void OnTriggerEnter(Collider other)
