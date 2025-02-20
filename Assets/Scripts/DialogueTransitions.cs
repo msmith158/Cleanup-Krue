@@ -151,6 +151,7 @@ namespace Mitchel.UISystems
 
         private IEnumerator BeginPanelTransitionOut()
         {
+            Debug.Log("Begin panel transition out");
             float timeElapsed = 0;
 
             while (timeElapsed < panelFadeOutTime)
@@ -167,6 +168,7 @@ namespace Mitchel.UISystems
 
         private IEnumerator BeginSpriteTransitionOut()
         {
+            Debug.Log("Begin sprite transition out");
             float timeElapsed = 0;
 
             yield return new WaitForSeconds(npcSpriteOutDelay);
