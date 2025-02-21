@@ -27,6 +27,11 @@ public class TestInteractionField : MonoBehaviour
         DialogueTransitions.InteractionFieldReactivate += ReactivateField;
     }
 
+    private void OnDisable()
+    {
+        DialogueTransitions.InteractionFieldReactivate -= ReactivateField;
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))

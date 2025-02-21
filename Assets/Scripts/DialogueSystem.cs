@@ -66,7 +66,7 @@ public class DialogueSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!isPrinting) 
+        if (!isPrinting && dialogueEngaged) 
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
@@ -89,7 +89,10 @@ public class DialogueSystem : MonoBehaviour
         else if (isPrinting)
         {
             if (Input.GetKeyDown(KeyCode.E))
+            {
                 skipCheck = true;
+                Debug.Log("Skipped dialogue");
+            }
         }
     }
 
@@ -101,20 +104,77 @@ public class DialogueSystem : MonoBehaviour
         dialoguePromptImage.enabled = false;
 
         dialogueSfxSource.clip = DialogueCharSfx;
-        if (isFixedSfxTiming) 
+        if (isFixedSfxTiming)
             StartCoroutine(PlaySFXFixed());
 
-        int charIteration = 0;
+        int charIteration = 0; //
+        for (int i = 0; i < dialogueLines[lineIteration].Length; i++)
+        {
+            char c = dialogueLines[lineIteration][i];
+
+            if (c == '<')
+            {
+                Debug.Log("Detected formatting argument");
+                string argument = "";
+                int j = i; // Local iteration variable for iteration until a closing formatting bracket is detected
+                while (c != '>')
+                {
+                    argument += c;
+                    c = dialogueLines[lineIteration][++j];
+                    Debug.Log("Moving to next character");
+                }
+                argument += '>';
+                dialogueText.text += argument;
+                c = dialogueLines[lineIteration][j];
+            }
+            
+            dialogueText.text += c;
+            
+            if (!isFixedSfxTiming) 
+                dialogueSfxSource.Play();
+            if (c == '.' && pauseAtFullStop && i != dialogueLines[lineIteration].Length - 1) 
+                yield return new WaitForSeconds(fullStopPauseTime);
+            yield return new WaitForSeconds(charDelayTime);
+            if (skipCheck)
+            {
+                dialogueText.text = dialogueLines[lineIteration]; // TODO: Set this up properly once inline argument parsing is implemented
+                dialogueSkipped = true;
+                break;
+            }
+        }
+        
         foreach (char c in dialogueLines[lineIteration])
         {
+            // Catching formatting arguments and instantly inserting them so the end user doesn't see it when they shouldn't.
+            /*if (c == '<')
+            {
+                Debug.Log("Detected formatting argument");
+                string argument = "";
+                while (c != '>')
+                {
+                    argument += c;
+                    charIteration++;
+                    Debug.Log("Moving to next character");
+                    continue;
+                }
+                argument += '>';
+                dialogueText.text += argument;
+                charIteration++;
+            }*/
+            
             dialogueText.text += c;
+            
             if (!isFixedSfxTiming) 
                 dialogueSfxSource.Play();
             if (c == '.' && pauseAtFullStop && charIteration != dialogueLines[lineIteration].Length - 1) 
                 yield return new WaitForSeconds(fullStopPauseTime);
             yield return new WaitForSeconds(charDelayTime);
-            if (skipCheck) 
+            if (skipCheck)
+            {
+                dialogueText.text = dialogueLines[lineIteration]; // TODO: Set this up properly once inline argument parsing is implemented
                 dialogueSkipped = true;
+                break;
+            }
             charIteration++;
         }
 
