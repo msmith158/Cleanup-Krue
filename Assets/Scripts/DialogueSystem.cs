@@ -107,7 +107,7 @@ public class DialogueSystem : MonoBehaviour
         if (isFixedSfxTiming)
             StartCoroutine(PlaySFXFixed());
 
-        int charIteration = 0; //
+        // This is the actual dialogue printing code
         for (int i = 0; i < dialogueLines[lineIteration].Length; i++)
         {
             char c = dialogueLines[lineIteration][i];
@@ -141,41 +141,6 @@ public class DialogueSystem : MonoBehaviour
                 dialogueSkipped = true;
                 break;
             }
-        }
-        
-        foreach (char c in dialogueLines[lineIteration])
-        {
-            // Catching formatting arguments and instantly inserting them so the end user doesn't see it when they shouldn't.
-            /*if (c == '<')
-            {
-                Debug.Log("Detected formatting argument");
-                string argument = "";
-                while (c != '>')
-                {
-                    argument += c;
-                    charIteration++;
-                    Debug.Log("Moving to next character");
-                    continue;
-                }
-                argument += '>';
-                dialogueText.text += argument;
-                charIteration++;
-            }*/
-            
-            dialogueText.text += c;
-            
-            if (!isFixedSfxTiming) 
-                dialogueSfxSource.Play();
-            if (c == '.' && pauseAtFullStop && charIteration != dialogueLines[lineIteration].Length - 1) 
-                yield return new WaitForSeconds(fullStopPauseTime);
-            yield return new WaitForSeconds(charDelayTime);
-            if (skipCheck)
-            {
-                dialogueText.text = dialogueLines[lineIteration]; // TODO: Set this up properly once inline argument parsing is implemented
-                dialogueSkipped = true;
-                break;
-            }
-            charIteration++;
         }
 
         dialoguePromptImage.enabled = true;
