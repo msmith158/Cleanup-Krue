@@ -71,16 +71,18 @@ public class DialogueSystem : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 if (dialogueEngaged) 
+                {
                     dialogueSfxSource.PlayOneShot(DialogueProceedSfx);
+                    if (lineIteration >= dialogueLines.Count)
+                        dialogueEngaged = false;
+                }
+
                 if (lineIteration < dialogueLines.Count)
                     StartCoroutine(StartDialoguePrinting());
-                else
+                else if (lineIteration >= dialogueLines.Count)
                 {
-                    if (!dialogueEngaged)
-                    {
-                        dialogueTransitions.ExitDialogue();
-                        dialogueEngaged = false;
-                    }
+                    dialogueEngaged = false;
+                    dialogueTransitions.ExitDialogue();
                 }
             }
         }
