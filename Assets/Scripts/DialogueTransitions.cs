@@ -30,6 +30,7 @@ namespace Mitchel.UISystems
         [Header("Object References")] 
         [SerializeField] private DialogueSystem dialogueSystem;
         [SerializeField] private RectTransform dialoguePanel;
+        [SerializeField] private RectTransform dialogueHeaderPanel;
         [SerializeField] private TextMeshProUGUI dialogueHeader;
         [SerializeField] private TextMeshProUGUI dialogueText;
         [SerializeField] private Image testSprite;
@@ -42,10 +43,12 @@ namespace Mitchel.UISystems
         private Color opaqueTextColour;
         private Color transparentTextColour;
         private Image dialoguePanelImage;
+        private Image dialogueHeaderPanelImage;
 
         private void Start()
         {
             dialoguePanelImage = dialoguePanel.gameObject.GetComponent<Image>();
+            dialogueHeaderPanelImage = dialogueHeaderPanel.gameObject.GetComponent<Image>();
             opaquePanelColour = dialoguePanelImage.color;
             transparentPanelColour = new Color(dialoguePanelImage.color.r, dialoguePanelImage.color.g,
                 dialoguePanelImage.color.b, 0);

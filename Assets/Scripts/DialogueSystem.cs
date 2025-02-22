@@ -112,27 +112,27 @@ public class DialogueSystem : MonoBehaviour
         {
             char c = dialogueLines[lineIteration][i];
 
+            // Detect formatting tags and insert them immediately so they don't get printed
             if (c == '<')
             {
-                Debug.Log("Detected formatting argument");
                 string argument = "";
                 int j = i; // Local iteration variable for iteration until a closing formatting bracket is detected
                 while (c != '>')
                 {
                     argument += c;
                     c = dialogueLines[lineIteration][++j];
-                    Debug.Log("Moving to next character");
                 }
-                argument += '>';
+                
                 dialogueText.text += argument;
-                c = dialogueLines[lineIteration][j];
+                i = j;
+                c = dialogueLines[lineIteration][i];
             }
             
             dialogueText.text += c;
             
             if (!isFixedSfxTiming) 
                 dialogueSfxSource.Play();
-            if (c == '.' && pauseAtFullStop && i != dialogueLines[lineIteration].Length - 1) 
+            if (c == '.' && pauseAtFullStop && (i != dialogueLines[lineIteration].Length - 1 || dialogueLines[lineIteration][i] != '<')) 
                 yield return new WaitForSeconds(fullStopPauseTime);
             yield return new WaitForSeconds(charDelayTime);
             if (skipCheck)
