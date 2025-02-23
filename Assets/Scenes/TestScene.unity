@@ -1368,12 +1368,12 @@ MonoBehaviour:
   DialogueProceedSfx: {fileID: 8300000, guid: f2b32649e70addf41a10002785361ce7, type: 3}
   isFixedSfxTiming: 0
   fixedSfxTiming: 0
-  dialogueUtils: {fileID: 1600295428}
-  dialogueTransitions: {fileID: 1600295426}
   dialogueHeader: {fileID: 5788981247554696741}
   dialogueText: {fileID: 2266857005779756095}
   dialoguePromptImage: {fileID: 1020210031520663200}
   dialogueSfxSource: {fileID: 1090368554}
+  dialogueUtils: {fileID: 1600295428}
+  dialogueTransitions: {fileID: 1600295426}
 --- !u!114 &1600295428
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1387,8 +1387,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterImage: {fileID: 1374877900}
-  quinnSprites: []
-  caspianSprites: []
+  quinnSprites:
+  - {fileID: 21300000, guid: 4772eede47c4c864f95b0fd4073f8a7b, type: 3}
+  - {fileID: 21300000, guid: 0271157e4226a5a4e94f60db6059d2d7, type: 3}
+  caspianSprites:
+  - {fileID: 21300000, guid: f67cdb6bda04d244bb2563277e759960, type: 3}
+  - {fileID: 21300000, guid: f53ba551142c9c84c9c9c9ae70c260c1, type: 3}
 --- !u!1 &1714797497
 GameObject:
   m_ObjectHideFlags: 0

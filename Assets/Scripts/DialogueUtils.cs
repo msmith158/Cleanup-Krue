@@ -70,39 +70,9 @@ public class DialogueUtils : MonoBehaviour
         }
     }
 
-    // TODO: Find a better method for this. Maybe generic types?
     private void ChangeExpression(string input)
     {
-        /*switch (input)
-        {
-            case "Neutral":
-                switch (selectedCharacter)
-                {
-                    case SelectedCharacter.Quinn:
-                        characterImage.sprite = quinnSprites[0];
-                        Debug.Log("Character Quinn is Neutral");
-                        break;
-                    case SelectedCharacter.Caspian:
-                        characterImage.sprite = caspianSprites[0];
-                        Debug.Log("Character Caspian is Neutral");
-                        break;
-                }
-                break;
-            case "Happy":
-                switch (selectedCharacter)
-                {
-                    case SelectedCharacter.Quinn:
-                        characterImage.sprite = quinnSprites[1];
-                        Debug.Log("Character Quinn is Happy");
-                        break;
-                    case SelectedCharacter.Caspian:
-                        characterImage.sprite = caspianSprites[1];
-                        Debug.Log("Character Caspian is Happy");
-                        break;
-                }
-                break;
-        }*/
-
+        // This will try and get whatever sprite is applicable depending on the character and expression detected
         if (expressionSprites.TryGetValue((selectedCharacter, input), out Sprite sprite))
         {
             characterImage.sprite = sprite;
