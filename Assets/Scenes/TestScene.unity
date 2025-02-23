@@ -1226,8 +1226,9 @@ GameObject:
   - component: {fileID: 1600295425}
   - component: {fileID: 1600295426}
   - component: {fileID: 1600295427}
+  - component: {fileID: 1600295428}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: DialogueManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1367,11 +1368,27 @@ MonoBehaviour:
   DialogueProceedSfx: {fileID: 8300000, guid: f2b32649e70addf41a10002785361ce7, type: 3}
   isFixedSfxTiming: 0
   fixedSfxTiming: 0
+  dialogueUtils: {fileID: 1600295428}
   dialogueTransitions: {fileID: 1600295426}
   dialogueHeader: {fileID: 5788981247554696741}
   dialogueText: {fileID: 2266857005779756095}
   dialoguePromptImage: {fileID: 1020210031520663200}
   dialogueSfxSource: {fileID: 1090368554}
+--- !u!114 &1600295428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600295423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f152647b1c5931a438c6f821f339c155, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterImage: {fileID: 1374877900}
+  quinnSprites: []
+  caspianSprites: []
 --- !u!1 &1714797497
 GameObject:
   m_ObjectHideFlags: 0

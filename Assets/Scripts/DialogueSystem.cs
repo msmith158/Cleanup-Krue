@@ -20,8 +20,7 @@ public class DialogueSystem : MonoBehaviour
     [SerializeField] private bool isFixedSfxTiming;
     [SerializeField] private float fixedSfxTiming;
 
-    [Header("Object References")] 
-    [SerializeField] private DialogueTransitions dialogueTransitions;
+    [Header("Object References")]
     [SerializeField] private TextMeshProUGUI dialogueHeader;
     [SerializeField] private TextMeshProUGUI dialogueText;
     [SerializeField] private Image dialoguePromptImage;
@@ -36,8 +35,16 @@ public class DialogueSystem : MonoBehaviour
     private int lineCharIndex = 0;
     
     // =========== Private object reference variables ===========
+    [SerializeField] private DialogueUtils dialogueUtils;
+    [SerializeField] private DialogueTransitions dialogueTransitions;
     private List<string> dialogueLines;
-    
+
+    private void Start()
+    {
+        dialogueUtils = GetComponent<DialogueUtils>();
+        dialogueTransitions = GetComponent<DialogueTransitions>();
+    }
+
     /// <summary>
     /// Saves the contents of the passed-through TextAsset to a list and begins the transition for the dialogue graphics.
     /// If you want to initialise the dialogue system, only call this function.
@@ -114,7 +121,7 @@ public class DialogueSystem : MonoBehaviour
             }
             inlineTag += ']';
             lineCharIndex++;
-            Debug.Log(inlineTag);
+            dialogueUtils.ProcessInlineArgument(inlineTag);
         }
 
         // If another inline argument comes right after, re-run the function.
