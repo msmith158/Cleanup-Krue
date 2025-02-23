@@ -51,6 +51,7 @@ public class DialogueSystem : MonoBehaviour
         
         if (dialogueLines != null) dialogueLines.Clear();
         dialogueLines = dialogueBundle.text.Split(new[] { "\r\n", "\n" }, System.StringSplitOptions.None).ToList(); // This splits each line into a string array and then assigns it to the list.
+        lineIteration = 0;
         dialogueTransitions.EnterDialogue();
     }
     
@@ -82,6 +83,7 @@ public class DialogueSystem : MonoBehaviour
                 else if (lineIteration >= dialogueLines.Count)
                 {
                     dialogueEngaged = false;
+                    dialogueText.text = "";
                     dialogueTransitions.ExitDialogue();
                 }
             }

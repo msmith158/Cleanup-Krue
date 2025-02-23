@@ -20,6 +20,9 @@ namespace Mitchel.UISystems
         [SerializeField] private float npcSpriteInDelay;
         [SerializeField] private float spriteSlideInAmount;
         [SerializeField] private float spriteFadeInTime;
+        [Space(5)] 
+        [SerializeField] private AnimationCurve headerPanelSlideInCurve;
+        [SerializeField] private float headerPanelSlideInAmount;
 
         [Header("Transition Out Effect Settings")] 
         [SerializeField] private float panelFadeOutTime;
@@ -32,7 +35,7 @@ namespace Mitchel.UISystems
         [SerializeField] private RectTransform dialoguePanel;
         [SerializeField] private RectTransform dialogueHeaderPanel;
         [SerializeField] private TextMeshProUGUI dialogueHeader;
-        [SerializeField] private TextMeshProUGUI dialogueText;
+        [SerializeField] private TextMeshProUGUI dialogueHeaderText;
         [SerializeField] private Image testSprite;
 
         public bool ReadyToProceed = false;
@@ -42,6 +45,8 @@ namespace Mitchel.UISystems
         private Color transparentTestSpriteColour;
         private Color opaqueTextColour;
         private Color transparentTextColour;
+        private Color opaqueHeaderPanelColour;
+        private Color transparentHeaderPanelColour;
         private Image dialoguePanelImage;
         private Image dialogueHeaderPanelImage;
 
@@ -57,13 +62,16 @@ namespace Mitchel.UISystems
             opaqueTextColour = dialogueHeader.color;
             transparentTextColour =
                 new Color(dialogueHeader.color.r, dialogueHeader.color.g, dialogueHeader.color.b, 0);
+            opaqueHeaderPanelColour = dialogueHeaderPanelImage.color;
+            transparentHeaderPanelColour = new Color(dialogueHeaderPanelImage.color.r, dialogueHeaderPanelImage.color.g,
+                dialogueHeaderPanelImage.color.b, 0);
         }
         
         public void EnterDialogue()
         {
             dialoguePanel.gameObject.SetActive(true);
             StartCoroutine(BeginPanelTransitionIn());
-            StartCoroutine(BeginSpriteTransitionIn());
+            StartCoroutine(BeginCharacterTransitionIn());
         }
 
         public void ExitDialogue()
@@ -71,7 +79,7 @@ namespace Mitchel.UISystems
             if (ReadyToProceed)
             {
                 StartCoroutine(BeginPanelTransitionOut());
-                StartCoroutine(BeginSpriteTransitionOut());
+                StartCoroutine(BeginCharacterTransitionOut());
             }
         }
 
@@ -112,7 +120,7 @@ namespace Mitchel.UISystems
             Debug.Log("Panel transition in is finished.");
         }
 
-        private IEnumerator BeginSpriteTransitionIn()
+        private IEnumerator BeginCharacterTransitionIn()
         {
             // General initialisation of variables
             float timeElapsed = 0;
@@ -123,10 +131,16 @@ namespace Mitchel.UISystems
             Vector3 oldSpritePos = new Vector3(spriteTransform.localPosition.x + spriteSlideInAmount,
                 spriteTransform.localPosition.y, spriteTransform.localPosition.z);
             Vector3 newSpritePos = spriteTransform.localPosition;
+            Vector3 oldHeaderPanelPos = new Vector3(dialogueHeaderPanel.localPosition.x + headerPanelSlideInAmount,
+                dialogueHeaderPanel.localPosition.y, dialogueHeaderPanel.localPosition.z);
+            Vector3 newHeaderPanelPos = dialogueHeaderPanel.localPosition;
             spriteTransform.localPosition = oldSpritePos;
+            dialogueHeaderPanel.localPosition = oldHeaderPanelPos;
             
             // Initialising all the fade in stuff
-            testSprite.color = transparentPanelColour;
+            testSprite.color = transparentTestSpriteColour;
+            dialogueHeaderPanelImage.color = transparentHeaderPanelColour;
+            dialogueHeaderText.color = transparentTextColour;
 
             // The delay between the panel transition and the sprite transition
             yield return new WaitForSeconds(npcSpriteInDelay);
@@ -136,10 +150,16 @@ namespace Mitchel.UISystems
                 if (timeElapsed < spriteFadeInTime)
                 {
                     testSprite.color = Color.Lerp(transparentTestSpriteColour, opaqueTestSpriteColour, timeElapsed / spriteFadeInTime);
+                    dialogueHeaderPanelImage.color = Color.Lerp(transparentPanelColour, opaquePanelColour,
+                        timeElapsed / spriteFadeInTime);
+                    dialogueHeaderText.color = Color.Lerp(transparentTextColour, opaqueTextColour,
+                        timeElapsed / spriteFadeInTime);
                 }
 
                 spriteTransform.localPosition =
                     Vector3.Lerp(oldSpritePos, newSpritePos, spriteSlideInCurve.Evaluate(timeElapsed));
+                dialogueHeaderPanel.localPosition = Vector3.Lerp(oldHeaderPanelPos, newHeaderPanelPos,
+                    headerPanelSlideInCurve.Evaluate(timeElapsed));
                 
                 timeElapsed += Time.deltaTime;
                 yield return null;
@@ -169,7 +189,7 @@ namespace Mitchel.UISystems
             Debug.Log("Panel transition out is done.");
         }
 
-        private IEnumerator BeginSpriteTransitionOut()
+        private IEnumerator BeginCharacterTransitionOut()
         {
             Debug.Log("Begin sprite transition out");
             float timeElapsed = 0;
@@ -179,6 +199,8 @@ namespace Mitchel.UISystems
             while (timeElapsed < spriteFadeOutTime)
             {
                 testSprite.color = Color.Lerp(opaqueTestSpriteColour, transparentTestSpriteColour,
+                    timeElapsed / panelFadeOutTime);
+                dialogueHeaderPanelImage.color = Color.Lerp(opaqueHeaderPanelColour, transparentHeaderPanelColour,
                     timeElapsed / panelFadeOutTime);
                 timeElapsed += Time.deltaTime;
                 yield return null;
