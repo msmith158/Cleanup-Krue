@@ -33,6 +33,7 @@ public class DialogueSystem : MonoBehaviour
     private bool dialogueSkipped = false;
     private bool dialogueEngaged = false;
     private int lineIteration = 0;
+    private int lineCharIndex = 0;
     
     // =========== Private object reference variables ===========
     private List<string> dialogueLines;
@@ -52,6 +53,8 @@ public class DialogueSystem : MonoBehaviour
         if (dialogueLines != null) dialogueLines.Clear();
         dialogueLines = dialogueBundle.text.Split(new[] { "\r\n", "\n" }, System.StringSplitOptions.None).ToList(); // This splits each line into a string array and then assigns it to the list.
         lineIteration = 0;
+        
+        CheckInlineArguments();
         dialogueTransitions.EnterDialogue();
     }
     
@@ -95,6 +98,29 @@ public class DialogueSystem : MonoBehaviour
                 skipCheck = true;
                 Debug.Log("Skipped dialogue");
             }
+        }
+    }
+
+    private void CheckInlineArguments()
+    {
+        // Check inline argument the first time.
+        if (dialogueLines[lineIteration][lineCharIndex] == '[')
+        {
+            string inlineTag = "";
+            while (dialogueLines[lineIteration][lineCharIndex] != ']')
+            {
+                inlineTag += dialogueLines[lineIteration][lineCharIndex];
+                lineCharIndex++;
+            }
+            inlineTag += ']';
+            lineCharIndex++;
+            Debug.Log(inlineTag);
+        }
+
+        // If another inline argument comes right after, re-run the function.
+        if (dialogueLines[lineIteration][lineCharIndex] == '[')
+        {
+            CheckInlineArguments();
         }
     }
 
