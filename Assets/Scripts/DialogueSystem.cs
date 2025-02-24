@@ -21,6 +21,7 @@ public class DialogueSystem : MonoBehaviour
     [SerializeField] private float fixedSfxTiming;
 
     [Header("Object References")]
+    public Image dialogueCharacterImage;
     [SerializeField] private TextMeshProUGUI dialogueHeader;
     [SerializeField] private TextMeshProUGUI dialogueText;
     [SerializeField] private Image dialoguePromptImage;
@@ -133,17 +134,21 @@ public class DialogueSystem : MonoBehaviour
 
     private IEnumerator StartDialoguePrinting()
     {
+        lineCharIndex = 0;
+        CheckInlineArguments();
+
         isPrinting = true;
         dialogueText.text = "";
         //dialogueHeader.text = "";
         dialoguePromptImage.enabled = false;
-
+        
+        // Setting up the sound effect clip and timing for character printing.
         dialogueSfxSource.clip = DialogueCharSfx;
         if (isFixedSfxTiming)
             StartCoroutine(PlaySFXFixed());
 
         // This is the actual dialogue printing code
-        for (int i = 0; i < dialogueLines[lineIteration].Length; i++)
+        for (int i = lineCharIndex; i < dialogueLines[lineIteration].Length; i++)
         {
             char c = dialogueLines[lineIteration][i];
 
@@ -161,6 +166,12 @@ public class DialogueSystem : MonoBehaviour
                 dialogueText.text += argument;
                 i = j;
                 c = dialogueLines[lineIteration][i];
+            }
+            // Check for an inline argument in the middle of a line, e.g. for a text effect
+            else if (c == '[')
+            {
+                lineCharIndex = i;
+                CheckInlineArguments();
             }
             
             dialogueText.text += c;

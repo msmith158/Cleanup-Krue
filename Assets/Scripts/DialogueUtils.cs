@@ -6,9 +6,6 @@ using UnityEngine.UI;
 
 public class DialogueUtils : MonoBehaviour
 {
-    [Header("Object References")]
-    [SerializeField] private Image characterImage;
-    [Space(5)]
     [Tooltip("Insert in the following order: Neutral, Happy.")] [SerializeField] private Sprite[] quinnSprites;
     [Tooltip("Insert in the following order: Neutral, Happy.")] [SerializeField] private Sprite[] caspianSprites;
 
@@ -17,11 +14,15 @@ public class DialogueUtils : MonoBehaviour
     private SelectedCharacter selectedCharacter = SelectedCharacter.Quinn;
     private Dictionary<(SelectedCharacter, string), Sprite> expressionSprites;
     private List<string> savedTag = new List<string>();
-    private int charIndex = 0;
+
+    // =========== Private object reference variables ===========
+    private DialogueSystem dialogueSys;
 
     // Declaring the dictionary of different expressions for each character
     private void Start()
     {
+        dialogueSys = GetComponent<DialogueSystem>();
+
         expressionSprites = new Dictionary<(SelectedCharacter, string), Sprite>
         {
             {(SelectedCharacter.Quinn, "Neutral"), quinnSprites[0]},
@@ -51,6 +52,12 @@ public class DialogueUtils : MonoBehaviour
                 case "sprite":
                     ChangeExpression(savedTag[++i]);
                     break;
+                case "texteffect":
+                    ChangeTextEffect(savedTag[++i]);
+                    break;
+                case "paneleffect":
+                    ChangePanelEffect(savedTag[++i]);
+                    break;
             }
         }
     }
@@ -75,12 +82,22 @@ public class DialogueUtils : MonoBehaviour
         // This will try and get whatever sprite is applicable depending on the character and expression detected
         if (expressionSprites.TryGetValue((selectedCharacter, input), out Sprite sprite))
         {
-            characterImage.sprite = sprite;
+            dialogueSys.dialogueCharacterImage.sprite = sprite;
             Debug.Log($"Character {selectedCharacter} is {input}");
         }
         else
         {
             Debug.LogWarning($"No sprite found for {selectedCharacter} with expression {input}");
         }
+    }
+
+    private void ChangeTextEffect(string input)
+    {
+        Debug.Log(input);
+    }
+
+    private void ChangePanelEffect(string input)
+    {
+        Debug.Log(input);
     }
 }
