@@ -68,10 +68,12 @@ public class DialogueUtils : MonoBehaviour
         {
             case "Quinn":
                 selectedCharacter = SelectedCharacter.Quinn;
+                dialogueSys.dialogueHeader.text = "Quinn";
                 Debug.Log("Chosen character is Quinn");
                 break;
             case "Caspian":
                 selectedCharacter = SelectedCharacter.Caspian;
+                dialogueSys.dialogueHeader.text = "Caspian";
                 Debug.Log("Chosen character is Caspian");
                 break;
         }

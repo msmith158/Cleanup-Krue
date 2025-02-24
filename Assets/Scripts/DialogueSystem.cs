@@ -22,7 +22,7 @@ public class DialogueSystem : MonoBehaviour
 
     [Header("Object References")]
     public Image dialogueCharacterImage;
-    [SerializeField] private TextMeshProUGUI dialogueHeader;
+    public TextMeshProUGUI dialogueHeader;
     [SerializeField] private TextMeshProUGUI dialogueText;
     [SerializeField] private Image dialoguePromptImage;
     [SerializeField] private AudioSource dialogueSfxSource;
@@ -172,6 +172,7 @@ public class DialogueSystem : MonoBehaviour
             {
                 lineCharIndex = i;
                 CheckInlineArguments();
+                i += lineCharIndex;
             }
             
             dialogueText.text += c;

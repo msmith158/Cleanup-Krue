@@ -1368,6 +1368,7 @@ MonoBehaviour:
   DialogueProceedSfx: {fileID: 8300000, guid: f2b32649e70addf41a10002785361ce7, type: 3}
   isFixedSfxTiming: 0
   fixedSfxTiming: 0
+  dialogueCharacterImage: {fileID: 1374877900}
   dialogueHeader: {fileID: 5788981247554696741}
   dialogueText: {fileID: 2266857005779756095}
   dialoguePromptImage: {fileID: 1020210031520663200}
@@ -1386,7 +1387,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f152647b1c5931a438c6f821f339c155, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterImage: {fileID: 1374877900}
   quinnSprites:
   - {fileID: 21300000, guid: 4772eede47c4c864f95b0fd4073f8a7b, type: 3}
   - {fileID: 21300000, guid: 0271157e4226a5a4e94f60db6059d2d7, type: 3}

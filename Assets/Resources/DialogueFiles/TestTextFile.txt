@@ -1,4 +1,4 @@
 [character=Caspian][sprite=Neutral]Welcome to Watching Paint Dry: The Game.
-<b>In this game, you watch paint dry.</b>
-<i>You win the game by watching the paint until it is dry.</i>
-<b><i>You lose the game by touching the paint before it is dry.</i></b>
+[sprite=Happy]<b>In this game, you watch paint dry.</b>
+[character=Quinn][sprite=Happy]<i>You win the game by watching the paint until it is dry.</i>
+[sprite=Neutral]<b><i>You lose the game by touching the paint before it is dry.</i></b>
