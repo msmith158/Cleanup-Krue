@@ -72,13 +72,21 @@ public class DialogueUtils : MonoBehaviour
             case "Quinn":
                 selectedCharacter = SelectedCharacter.Quinn;
                 dialogueSys.dialogueHeader.text = "Quinn";
+                
+                // ### THE AUDIO SWITCH STATEMENT STARTS FROM HERE ###
                 dialogueSys.SetCharacterVoice(0);
+                // ### THE AUDIO SWITCH STATEMENT STARTS FROM HERE ###
+                
                 Debug.Log("Chosen character is Quinn");
                 break;
             case "Caspian":
                 selectedCharacter = SelectedCharacter.Caspian;
                 dialogueSys.dialogueHeader.text = "Caspian";
+                
+                // ### THE AUDIO SWITCH STATEMENT STARTS FROM HERE ###
                 dialogueSys.SetCharacterVoice(1);
+                // ### THE AUDIO SWITCH STATEMENT STARTS FROM HERE ###
+                
                 Debug.Log("Chosen character is Caspian");
                 break;
         }

@@ -141,7 +141,9 @@ public class DialogueSystem : MonoBehaviour
     // Wwise-oriented function that sets the voice of the character from an inline argument.
     public void SetCharacterVoice(int character)
     {
+        // ### THE AUDIO SWITCH STATEMENT IS SET HERE ###
         dialogueUtils.voiceSwitch[character].SetValue(gameObject);
+        // ### THE AUDIO SWITCH STATEMENT IS SET HERE ###
     }
 
     private IEnumerator StartDialoguePrinting()
@@ -190,9 +192,12 @@ public class DialogueSystem : MonoBehaviour
             dialogueText.text += c;
 
             if (!isFixedSfxTiming)
+                
+                // ### THE AUDIO EVENT IS CALLED FROM HERE ###
                 AkSoundEngine.SetSwitch("Play_Dialogue", "Dialogue", gameObject);
                 AkSoundEngine.PostEvent(dialogueSfxEvent.Id, gameObject);
-                // dialogueSfxEvent.Post(gameObject);
+                // ### THE AUDIO EVENT IS CALLED FROM HERE ###
+                
             if (c == '.' && pauseAtFullStop && (i != dialogueLines[lineIteration].Length - 1 || dialogueLines[lineIteration][i] != '<')) 
                 yield return new WaitForSeconds(fullStopPauseTime);
             yield return new WaitForSeconds(charDelayTime);
