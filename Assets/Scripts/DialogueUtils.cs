@@ -14,6 +14,7 @@ public class DialogueUtils : MonoBehaviour
     private SelectedCharacter selectedCharacter = SelectedCharacter.Quinn;
     private Dictionary<(SelectedCharacter, string), Sprite> expressionSprites;
     private List<string> savedTag = new List<string>();
+    private string defaultExpression = "Neutral";
 
     // =========== Private object reference variables ===========
     private DialogueSystem dialogueSys;

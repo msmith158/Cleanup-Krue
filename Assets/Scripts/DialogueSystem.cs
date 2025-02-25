@@ -183,6 +183,7 @@ public class DialogueSystem : MonoBehaviour
             
             dialogueText.text += c;
             
+            // Play the sound
             if (!isFixedSfxTiming) 
                 dialogueSfxSource.Play();
             if (c == '.' && pauseAtFullStop && (i != dialogueLines[lineIteration].Length - 1 || dialogueLines[lineIteration][i] != '<')) 
