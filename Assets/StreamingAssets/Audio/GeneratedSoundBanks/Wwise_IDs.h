@@ -11,6 +11,32 @@
 
 namespace AK
 {
+    namespace SWITCHES
+    {
+        namespace DIALOGUESOUNDS
+        {
+            static const AkUniqueID GROUP = 2239162207U;
+
+            namespace SWITCH
+            {
+                static const AkUniqueID CASPIAN = 3915267348U;
+                static const AkUniqueID QUINN = 1448237000U;
+            } // namespace SWITCH
+        } // namespace DIALOGUESOUNDS
+
+        namespace FOOTSTEPSTERRAIN
+        {
+            static const AkUniqueID GROUP = 665703777U;
+
+            namespace SWITCH
+            {
+                static const AkUniqueID DIRT = 2195636714U;
+                static const AkUniqueID GRAVEL = 2185786256U;
+            } // namespace SWITCH
+        } // namespace FOOTSTEPSTERRAIN
+
+    } // namespace SWITCHES
+
     namespace BANKS
     {
         static const AkUniqueID INIT = 1355168291U;

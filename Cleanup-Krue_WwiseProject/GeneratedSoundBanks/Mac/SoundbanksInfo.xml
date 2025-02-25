@@ -21,11 +21,25 @@
 			<Busses>
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
+			<SwitchGroups>
+				<SwitchGroup Id="665703777" Name="FootstepsTerrain">
+					<Switches>
+						<Switch Id="2185786256" Name="Gravel"/>
+						<Switch Id="2195636714" Name="Dirt"/>
+					</Switches>
+				</SwitchGroup>
+				<SwitchGroup Id="2239162207" Name="DialogueSounds">
+					<Switches>
+						<Switch Id="1448237000" Name="Quinn"/>
+						<Switch Id="3915267348" Name="Caspian"/>
+					</Switches>
+				</SwitchGroup>
+			</SwitchGroups>
 		</SoundBank>
 		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{3B51E889-948F-7EDA-A1E8-111109B087A1}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{6505E63A-D812-4B79-2012-B607387F2E2F}</FileHash>
+	<FileHash>{A2AA68EE-726F-0920-432B-95C698EF3584}</FileHash>
 </SoundBanksInfo>
