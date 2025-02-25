@@ -188,9 +188,11 @@ public class DialogueSystem : MonoBehaviour
             }
             
             dialogueText.text += c;
-            
-            if (!isFixedSfxTiming) 
+
+            if (!isFixedSfxTiming)
+                AkSoundEngine.SetSwitch("Play_Dialogue", "Dialogue", gameObject);
                 AkSoundEngine.PostEvent(dialogueSfxEvent.Id, gameObject);
+                // dialogueSfxEvent.Post(gameObject);
             if (c == '.' && pauseAtFullStop && (i != dialogueLines[lineIteration].Length - 1 || dialogueLines[lineIteration][i] != '<')) 
                 yield return new WaitForSeconds(fullStopPauseTime);
             yield return new WaitForSeconds(charDelayTime);

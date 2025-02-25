@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e31c7269b30de39428bb3dd3551cef59, type: 3}
+  m_Name: 386CA3CD-4338-413C-B7AB-6720CB2D6079
+  m_EditorClassIdentifier: 
+  objectName: DialogueVoices
+  id: 862515394
+  guid: 386CA3CD-4338-413C-B7AB-6720CB2D6079

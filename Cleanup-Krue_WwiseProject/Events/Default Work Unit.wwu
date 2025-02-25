@@ -1,6 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{938A6CC8-C777-4472-AE62-D7A159A37B9C}" SchemaVersion="119">
 	<Events>
-		<WorkUnit Name="Default Work Unit" ID="{938A6CC8-C777-4472-AE62-D7A159A37B9C}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{938A6CC8-C777-4472-AE62-D7A159A37B9C}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Play_Footsteps" ID="{B94D4EFC-5266-4A50-97F1-36CF549F01D8}">
+					<ChildrenList>
+						<Action Name="" ID="{F893597D-9B2C-418C-94F5-2CA69A98BF24}" ShortID="106591946">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Footsteps" ID="{03EE52FE-066D-4449-AA70-72129F10C622}" WorkUnitID="{85B9B83B-53B2-4441-B4C4-3E64EDA64881}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Dialogue" ID="{2D8626C6-69D0-41A7-847D-9CF66CD38AE7}">
+					<ChildrenList>
+						<Action Name="" ID="{CF09ADDE-A8F3-4A65-978C-5690A5ED4793}" ShortID="632969360">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Dialogue" ID="{BA510F4C-838D-4F5C-A754-3EA0693D0CC4}" WorkUnitID="{85B9B83B-53B2-4441-B4C4-3E64EDA64881}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Crying_Baby" ID="{FC5877BA-43F7-43F0-973B-BF9ED1B07A41}">
+					<ChildrenList>
+						<Action Name="" ID="{B927B187-17BE-4CDB-A395-2F1ECC82C639}" ShortID="297913481">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Crying Baby" ID="{57B49E83-C02F-4945-8CA4-F954E23EA00D}" WorkUnitID="{85B9B83B-53B2-4441-B4C4-3E64EDA64881}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
 	</Events>
 </WwiseDocument>

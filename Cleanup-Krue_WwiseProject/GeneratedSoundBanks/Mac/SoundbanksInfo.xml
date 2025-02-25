@@ -21,25 +21,26 @@
 			<Busses>
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
-			<SwitchGroups>
-				<SwitchGroup Id="665703777" Name="FootstepsTerrain">
-					<Switches>
-						<Switch Id="2185786256" Name="Gravel"/>
-						<Switch Id="2195636714" Name="Dirt"/>
-					</Switches>
-				</SwitchGroup>
-				<SwitchGroup Id="2239162207" Name="DialogueSounds">
-					<Switches>
-						<Switch Id="1448237000" Name="Quinn"/>
-						<Switch Id="3915267348" Name="Caspian"/>
-					</Switches>
-				</SwitchGroup>
-			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{3B51E889-948F-7EDA-A1E8-111109B087A1}">
-			<ShortName>Main</ShortName>
-			<Path>Main.bnk</Path>
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{08630EEE-6722-B3F2-072F-445F1AC1DEA0}">
+			<ShortName>main</ShortName>
+			<Path>main.bnk</Path>
+			<Media>
+				<File Id="714154760" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Baby Cry.wav</ShortName>
+					<CachePath>SFX/Baby Cry_818F3B66.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="1288572797" Name="Play_Crying_Baby" DurationType="OneShot" DurationMin="4.6672564" DurationMax="4.6672564">
+					<MediaRefs>
+						<MediaRef Id="714154760"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="267911644" Name="Play_Dialogue" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="3854155799" Name="Play_Footsteps" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{A2AA68EE-726F-0920-432B-95C698EF3584}</FileHash>
+	<FileHash>{AE6DE6BB-25D3-F813-1ACE-D71491AA2D0A}</FileHash>
 </SoundBanksInfo>

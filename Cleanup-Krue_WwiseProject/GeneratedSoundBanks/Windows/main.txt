@@ -4,5 +4,5 @@ Event	ID	Name			Wwise Object Path	Notes
 	3854155799	Play_Footsteps			\Default Work Unit\Play_Footsteps	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	714154760	Crying Baby	C:\Cleanup-Krue\Cleanup-Krue_WwiseProject\.cache\Mac\SFX\Baby Cry_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Crying Baby		411748
+	714154760	Crying Baby	C:\Cleanup-Krue\Cleanup-Krue_WwiseProject\.cache\Windows\SFX\Baby Cry_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Crying Baby		411748
 
