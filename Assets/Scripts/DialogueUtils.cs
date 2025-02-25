@@ -14,6 +14,9 @@ public class DialogueUtils : MonoBehaviour
     private SelectedCharacter selectedCharacter = SelectedCharacter.Quinn;
     private Dictionary<(SelectedCharacter, string), Sprite> expressionSprites;
     private List<string> savedTag = new List<string>();
+    
+    // ============== Private Wwise API variables ==============
+    public AK.Wwise.Switch[] voiceSwitch;
 
     // =========== Private object reference variables ===========
     private DialogueSystem dialogueSys;
@@ -36,7 +39,7 @@ public class DialogueUtils : MonoBehaviour
     /// Process in-line arguments presented in square brackets to give special instructions
     /// to the dialogue system (e.g. to change character, character expression or text effect).
     /// </summary>
-    /// <param name="tag">The in-line argument captured by the dialogue system, enclosed in square brackets.</param>
+    /// <param name="tag">The in-line argument captured by the dialogue system.</param>
     public void ProcessInlineArgument(string tag)
     {
         if (savedTag != null) savedTag.Clear();
@@ -69,11 +72,13 @@ public class DialogueUtils : MonoBehaviour
             case "Quinn":
                 selectedCharacter = SelectedCharacter.Quinn;
                 dialogueSys.dialogueHeader.text = "Quinn";
+                dialogueSys.SetCharacterVoice(0);
                 Debug.Log("Chosen character is Quinn");
                 break;
             case "Caspian":
                 selectedCharacter = SelectedCharacter.Caspian;
                 dialogueSys.dialogueHeader.text = "Caspian";
+                dialogueSys.SetCharacterVoice(1);
                 Debug.Log("Chosen character is Caspian");
                 break;
         }

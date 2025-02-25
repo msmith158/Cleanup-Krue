@@ -35,6 +35,9 @@ public class DialogueSystem : MonoBehaviour
     private int lineIteration = 0;
     private int lineCharIndex = 0;
     
+    // ============== Private Wwise API variables ==============
+    [SerializeField] private AK.Wwise.Event dialogueSfxEvent;
+    
     // =========== Private object reference variables ===========
     [SerializeField] private DialogueUtils dialogueUtils;
     [SerializeField] private DialogueTransitions dialogueTransitions;
@@ -111,6 +114,8 @@ public class DialogueSystem : MonoBehaviour
 
     private void CheckInlineArguments()
     {
+        int originalIndex = lineCharIndex;
+        
         // Check inline argument the first time.
         if (dialogueLines[lineIteration][lineCharIndex] == '[')
         {
@@ -123,6 +128,7 @@ public class DialogueSystem : MonoBehaviour
             inlineTag += ']';
             lineCharIndex++;
             dialogueUtils.ProcessInlineArgument(inlineTag);
+            
         }
 
         // If another inline argument comes right after, re-run the function.
@@ -130,6 +136,12 @@ public class DialogueSystem : MonoBehaviour
         {
             CheckInlineArguments();
         }
+    }
+
+    // Wwise-oriented function that sets the voice of the character from an inline argument.
+    public void SetCharacterVoice(int character)
+    {
+        dialogueUtils.voiceSwitch[character].SetValue(gameObject);
     }
 
     private IEnumerator StartDialoguePrinting()
@@ -178,7 +190,7 @@ public class DialogueSystem : MonoBehaviour
             dialogueText.text += c;
             
             if (!isFixedSfxTiming) 
-                dialogueSfxSource.Play();
+                AkSoundEngine.PostEvent(dialogueSfxEvent.Id, gameObject);
             if (c == '.' && pauseAtFullStop && (i != dialogueLines[lineIteration].Length - 1 || dialogueLines[lineIteration][i] != '<')) 
                 yield return new WaitForSeconds(fullStopPauseTime);
             yield return new WaitForSeconds(charDelayTime);
@@ -200,7 +212,7 @@ public class DialogueSystem : MonoBehaviour
     {
         while (isPrinting)
         {
-            dialogueSfxSource.Play();
+            AkSoundEngine.PostEvent(dialogueSfxEvent.Id, gameObject);
             yield return new WaitForSeconds(fixedSfxTiming);
         }
     }
