@@ -111,6 +111,7 @@ public class DialogueSystem : MonoBehaviour
 
     private void CheckInlineArguments()
     {
+        int minCharIndex = lineCharIndex;
         // Check inline argument the first time.
         if (dialogueLines[lineIteration][lineCharIndex] == '[')
         {
@@ -123,13 +124,19 @@ public class DialogueSystem : MonoBehaviour
             inlineTag += ']';
             lineCharIndex++;
             dialogueUtils.ProcessInlineArgument(inlineTag);
+            dialogueLines[lineIteration] =
+                dialogueLines[lineIteration].Remove(minCharIndex, lineCharIndex - minCharIndex);
+            lineCharIndex = 0;
         }
 
         // If another inline argument comes right after, re-run the function.
         if (dialogueLines[lineIteration][lineCharIndex] == '[')
         {
+            Debug.Log("Re-running inline arguments check");
             CheckInlineArguments();
         }
+        
+        Debug.Log("Inline arguments check complete");
     }
 
     private IEnumerator StartDialoguePrinting()
@@ -139,7 +146,6 @@ public class DialogueSystem : MonoBehaviour
 
         isPrinting = true;
         dialogueText.text = "";
-        //dialogueHeader.text = "";
         dialoguePromptImage.enabled = false;
         
         // Setting up the sound effect clip and timing for character printing.
@@ -148,7 +154,7 @@ public class DialogueSystem : MonoBehaviour
             StartCoroutine(PlaySFXFixed());
 
         // This is the actual dialogue printing code
-        for (int i = lineCharIndex; i < dialogueLines[lineIteration].Length; i++)
+        for (int i = 0; i < dialogueLines[lineIteration].Length; i++)
         {
             char c = dialogueLines[lineIteration][i];
 
