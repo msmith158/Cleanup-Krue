@@ -34,7 +34,6 @@ namespace Mitchel.UISystems
         [SerializeField] private DialogueSystem dialogueSystem;
         [SerializeField] private RectTransform dialoguePanel;
         [SerializeField] private RectTransform dialogueHeaderPanel;
-        [SerializeField] private TextMeshProUGUI dialogueHeader;
         [SerializeField] private TextMeshProUGUI dialogueHeaderText;
         [SerializeField] private Image testSprite;
 
@@ -59,9 +58,9 @@ namespace Mitchel.UISystems
                 dialoguePanelImage.color.b, 0);
             opaqueTestSpriteColour = testSprite.color;
             transparentTestSpriteColour = new Color(testSprite.color.r, testSprite.color.g, testSprite.color.b, 0);
-            opaqueTextColour = dialogueHeader.color;
+            opaqueTextColour = dialogueHeaderText.color;
             transparentTextColour =
-                new Color(dialogueHeader.color.r, dialogueHeader.color.g, dialogueHeader.color.b, 0);
+                new Color(dialogueHeaderText.color.r, dialogueHeaderText.color.g, dialogueHeaderText.color.b, 0);
             opaqueHeaderPanelColour = dialogueHeaderPanelImage.color;
             transparentHeaderPanelColour = new Color(dialogueHeaderPanelImage.color.r, dialogueHeaderPanelImage.color.g,
                 dialogueHeaderPanelImage.color.b, 0);

@@ -1432,7 +1432,6 @@ MonoBehaviour:
   dialogueSystem: {fileID: 1600295427}
   dialoguePanel: {fileID: 4022489094753632290}
   dialogueHeaderPanel: {fileID: 1516556293}
-  dialogueHeader: {fileID: 5788981247554696741}
   dialogueHeaderText: {fileID: 5788981247554696741}
   testSprite: {fileID: 1374877900}
   ReadyToProceed: 0
@@ -2228,7 +2227,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!222 &6557188813096292328
 CanvasRenderer:
   m_ObjectHideFlags: 0
