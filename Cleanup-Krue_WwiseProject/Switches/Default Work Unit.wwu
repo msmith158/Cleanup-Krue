@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{5DE0096E-21C6-4BDA-95CE-D4A0A10A33FF}" SchemaVersion="119">
 	<Switches>
-		<WorkUnit Name="Default Work Unit" ID="{5DE0096E-21C6-4BDA-95CE-D4A0A10A33FF}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{5DE0096E-21C6-4BDA-95CE-D4A0A10A33FF}" PersistMode="Standalone">
+			<ChildrenList>
+				<SwitchGroup Name="DialogueVoices" ID="{B858CB69-F1B5-4BDE-9592-900F718C4965}">
+					<ChildrenList>
+						<Switch Name="Caspian" ID="{CA1555E9-9FB7-488E-9B07-3FDA777516D2}"/>
+						<Switch Name="Quinn" ID="{E3C7F3F5-BD12-4ADC-B45F-454E4E6E1747}"/>
+					</ChildrenList>
+				</SwitchGroup>
+				<SwitchGroup Name="FootstepSounds" ID="{FC6E0137-56AE-4E71-8594-F7500DD2564A}">
+					<ChildrenList>
+						<Switch Name="Carpet" ID="{8B43EDA4-1A4C-4C30-B6FD-749EB62A35B3}"/>
+						<Switch Name="Dirt" ID="{5703FFAF-3E16-4617-89DD-D49A82C24D11}"/>
+						<Switch Name="Grass" ID="{FDB8A535-D5DC-4DDF-B379-A5E9DC4863D9}"/>
+						<Switch Name="Gravel" ID="{FFA13E7F-1885-40B5-AC11-C4D1D836A39F}"/>
+						<Switch Name="Jump" ID="{CBA910D6-485D-4380-A34B-42A526F3259A}"/>
+						<Switch Name="Rock" ID="{C45C0FC7-E51B-4712-8735-2DC649328442}"/>
+						<Switch Name="Tiles" ID="{C524B204-0E3E-4D76-AA82-9F273E196829}"/>
+						<Switch Name="Wood" ID="{A21591C1-F919-4EF0-8B3B-E5666E4E0247}"/>
+					</ChildrenList>
+				</SwitchGroup>
+			</ChildrenList>
+		</WorkUnit>
 	</Switches>
 </WwiseDocument>

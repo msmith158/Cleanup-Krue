@@ -3,6 +3,65 @@ Event	ID	Name			Wwise Object Path	Notes
 	1288572797	Play_Crying_Baby			\Default Work Unit\Play_Crying_Baby	
 	3854155799	Play_Footsteps			\Default Work Unit\Play_Footsteps	
 
+Switch Group	ID	Name			Wwise Object Path	Notes
+	862515394	DialogueVoices			\Default Work Unit\DialogueVoices	
+	1446621239	FootstepSounds			\Default Work Unit\FootstepSounds	
+
+Switch	ID	Name	Switch Group			Notes
+	1448237000	Quinn	DialogueVoices			
+	3915267348	Caspian	DialogueVoices			
+	2058049674	Wood	FootstepSounds			
+	2144363834	Rock	FootstepSounds			
+	2185786256	Gravel	FootstepSounds			
+	2195636714	Dirt	FootstepSounds			
+	2412606308	Carpet	FootstepSounds			
+	3316001432	Tiles	FootstepSounds			
+	3833651337	Jump	FootstepSounds			
+	4248645337	Grass	FootstepSounds			
+
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	10393979	Tile 3	C:\Cleanup-Krue\Cleanup-Krue_WwiseProject\.cache\Windows\SFX\Tile 3_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Tiles\Tile 3		137312
+	21191137	Gravel	C:\Cleanup-Krue\Cleanup-Krue_WwiseProject\.cache\Windows\SFX\Gravel_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Gravel\Gravel		46410
+	38884829	Dirt 1	C:\Cleanup-Krue\Cleanup-Krue_WwiseProject\.cache\Windows\SFX\Dirt 1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Dirt\Dirt 1		28310
+	43596559	Tick 1	C:\Cleanup-Krue\Cleanup-Krue_WwiseProject\.cache\Windows\SFX\Tick 1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Dialogue\Caspian\Tick 1		67296
+	61056889	Jump 2	C:\Cleanup-Krue\Cleanup-Krue_WwiseProject\.cache\Windows\SFX\Jump 2_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Jump\Jump 2		6680
+	191534629	Tick 4	C:\Cleanup-Krue\Cleanup-Krue_WwiseProject\.cache\Windows\SFX\Tick 4_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Dialogue\Caspian\Tick 4		67296
+	204655900	Tock 1	C:\Cleanup-Krue\Cleanup-Krue_WwiseProject\.cache\Windows\SFX\Tock 1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Dialogue\Quinn\Tock 1		67296
+	231976470	Tock 2	C:\Cleanup-Krue\Cleanup-Krue_WwiseProject\.cache\Windows\SFX\Tock 2_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Dialogue\Quinn\Tock 2		67296
+	330945980	Grass 3	C:\Cleanup-Krue\Cleanup-Krue_WwiseProject\.cache\Windows\SFX\Grass 3_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Grass\Grass 3		59744
+	416377204	Carpet footsteps_06	C:\Cleanup-Krue\Cleanup-Krue_WwiseProject\.cache\Windows\SFX\Carpet\Carpet footsteps_281EA04D.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Carpet\Carpet footsteps_06		35498
+	463328824	Gravel 6	C:\Cleanup-Krue\Cleanup-Krue_WwiseProject\.cache\Windows\SFX\Gravel 6_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Gravel\Gravel 6		47018
+	475234980	Rock 2	C:\Cleanup-Krue\Cleanup-Krue_WwiseProject\.cache\Windows\SFX\Rock 2_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Rock\Rock 2		57408
+	475265307	Rock 1	C:\Cleanup-Krue\Cleanup-Krue_WwiseProject\.cache\Windows\SFX\Rock 1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Rock\Rock 1		41536
+	490488287	Rock 3	C:\Cleanup-Krue\Cleanup-Krue_WwiseProject\.cache\Windows\SFX\Rock 3_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Rock\Rock 3		55642
+	500635197	Dirt 2	C:\Cleanup-Krue\Cleanup-Krue_WwiseProject\.cache\Windows\SFX\Dirt 2_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Dirt\Dirt 2		34482
+	558773996	Jump 1	C:\Cleanup-Krue\Cleanup-Krue_WwiseProject\.cache\Windows\SFX\Jump 1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Jump\Jump 1		23392
+	583177940	Carpet footsteps_05	C:\Cleanup-Krue\Cleanup-Krue_WwiseProject\.cache\Windows\SFX\Carpet\Carpet footsteps_76069BA5.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Carpet\Carpet footsteps_05		42810
+	685529120	Gravel 5	C:\Cleanup-Krue\Cleanup-Krue_WwiseProject\.cache\Windows\SFX\Gravel 5_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Gravel\Gravel 5		35442
+	706364621	Tick 2	C:\Cleanup-Krue\Cleanup-Krue_WwiseProject\.cache\Windows\SFX\Tick 2_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Dialogue\Caspian\Tick 2		67296
+	709758623	Gravel 4	C:\Cleanup-Krue\Cleanup-Krue_WwiseProject\.cache\Windows\SFX\Gravel 4_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Gravel\Gravel 4		44582
 	714154760	Crying Baby	C:\Cleanup-Krue\Cleanup-Krue_WwiseProject\.cache\Windows\SFX\Baby Cry_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Crying Baby		411748
+	715543028	Tock 3	C:\Cleanup-Krue\Cleanup-Krue_WwiseProject\.cache\Windows\SFX\Tock 3_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Dialogue\Quinn\Tock 3		67296
+	715706001	Tock 4	C:\Cleanup-Krue\Cleanup-Krue_WwiseProject\.cache\Windows\SFX\Tock 4_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Dialogue\Quinn\Tock 4		67296
+	743885792	Wood 2	C:\Cleanup-Krue\Cleanup-Krue_WwiseProject\.cache\Windows\SFX\Wood 2_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Wood\Wood 2		49728
+	745849728	Rock 4	C:\Cleanup-Krue\Cleanup-Krue_WwiseProject\.cache\Windows\SFX\Rock 4_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Rock\Rock 4		41976
+	747732187	Carpet footsteps_04	C:\Cleanup-Krue\Cleanup-Krue_WwiseProject\.cache\Windows\SFX\Carpet\Carpet footsteps_5395BC35.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Carpet\Carpet footsteps_04		40886
+	788600796	Grass 1	C:\Cleanup-Krue\Cleanup-Krue_WwiseProject\.cache\Windows\SFX\Grass 1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Grass\Grass 1		60494
+	800684289	Tile 1	C:\Cleanup-Krue\Cleanup-Krue_WwiseProject\.cache\Windows\SFX\Tile 1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Tiles\Tile 1		127072
+	814838075	Dirt 3	C:\Cleanup-Krue\Cleanup-Krue_WwiseProject\.cache\Windows\SFX\Dirt 3_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Dirt\Dirt 3		53880
+	816166652	Tile 2	C:\Cleanup-Krue\Cleanup-Krue_WwiseProject\.cache\Windows\SFX\Tile 2_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Tiles\Tile 2		135264
+	823962221	Wood 1	C:\Cleanup-Krue\Cleanup-Krue_WwiseProject\.cache\Windows\SFX\Wood 1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Wood\Wood 1		48928
+	830327513	Wood 4	C:\Cleanup-Krue\Cleanup-Krue_WwiseProject\.cache\Windows\SFX\Wood 4_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Wood\Wood 4		29280
+	832127125	Carpet footsteps_01	C:\Cleanup-Krue\Cleanup-Krue_WwiseProject\.cache\Windows\SFX\Carpet\Carpet footsteps_B0604495.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Carpet\Carpet footsteps_01		41656
+	918856414	Wood 3	C:\Cleanup-Krue\Cleanup-Krue_WwiseProject\.cache\Windows\SFX\Wood 3_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Wood\Wood 3		47712
+	919983285	Carpet footsteps_02	C:\Cleanup-Krue\Cleanup-Krue_WwiseProject\.cache\Windows\SFX\Carpet\Carpet footsteps_8A53B80D.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Carpet\Carpet footsteps_02		45504
+	929096786	Carpet footsteps	C:\Cleanup-Krue\Cleanup-Krue_WwiseProject\.cache\Windows\SFX\Carpet\Carpet footsteps_A9FD49BA.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Carpet\Carpet footsteps		54740
+	937659024	Carpet footsteps_03	C:\Cleanup-Krue\Cleanup-Krue_WwiseProject\.cache\Windows\SFX\Carpet\Carpet footsteps_35F5051F.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Carpet\Carpet footsteps_03		41272
+	961599361	Wood 5	C:\Cleanup-Krue\Cleanup-Krue_WwiseProject\.cache\Windows\SFX\Wood 5_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Wood\Wood 5		49760
+	962098369	Gravel 2	C:\Cleanup-Krue\Cleanup-Krue_WwiseProject\.cache\Windows\SFX\Gravel 2_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Gravel\Gravel 2		44582
+	1017744363	Tick 3	C:\Cleanup-Krue\Cleanup-Krue_WwiseProject\.cache\Windows\SFX\Tick 3_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Dialogue\Caspian\Tick 3		67296
+	1017967967	Gravel 3	C:\Cleanup-Krue\Cleanup-Krue_WwiseProject\.cache\Windows\SFX\Gravel 3_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Gravel\Gravel 3		42142
+	1046495347	Dirt 4	C:\Cleanup-Krue\Cleanup-Krue_WwiseProject\.cache\Windows\SFX\Dirt 4_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Dirt\Dirt 4		29634
+	1057114951	Tile 4	C:\Cleanup-Krue\Cleanup-Krue_WwiseProject\.cache\Windows\SFX\Tile 4_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Tiles\Tile 4		118880
+	1057184335	Grass 2	C:\Cleanup-Krue\Cleanup-Krue_WwiseProject\.cache\Windows\SFX\Grass 2_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Grass\Grass 2		62256
 

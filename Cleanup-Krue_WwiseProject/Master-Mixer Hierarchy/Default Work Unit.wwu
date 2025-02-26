@@ -10,6 +10,41 @@
 						</Reference>
 					</ReferenceList>
 				</Bus>
+				<Bus Name="SFX" ID="{7A84A99E-A6C1-4FD5-A1E2-E180D9EA42CD}">
+					<ReferenceList>
+						<Reference Name="AudioDevice" PluginName="System" CompanyID="0" PluginID="174" PluginType="7">
+							<ObjectRef Name="System" ID="{AC62D925-101A-4616-B2EB-3207DE8F21F5}" WorkUnitID="{52E8510F-B3B0-4F49-83E9-0046BF842220}"/>
+						</Reference>
+					</ReferenceList>
+				</Bus>
+				<Bus Name="Music" ID="{1E4B7AE7-AAEC-477F-B631-0E37CBC3E5DD}">
+					<ReferenceList>
+						<Reference Name="AudioDevice" PluginName="System" CompanyID="0" PluginID="174" PluginType="7">
+							<ObjectRef Name="System" ID="{AC62D925-101A-4616-B2EB-3207DE8F21F5}" WorkUnitID="{52E8510F-B3B0-4F49-83E9-0046BF842220}"/>
+						</Reference>
+					</ReferenceList>
+				</Bus>
+				<Bus Name="Enemies" ID="{090771A6-019B-44FA-8469-FC3F7BABB52A}">
+					<ReferenceList>
+						<Reference Name="AudioDevice" PluginName="System" CompanyID="0" PluginID="174" PluginType="7">
+							<ObjectRef Name="System" ID="{AC62D925-101A-4616-B2EB-3207DE8F21F5}" WorkUnitID="{52E8510F-B3B0-4F49-83E9-0046BF842220}"/>
+						</Reference>
+					</ReferenceList>
+				</Bus>
+				<Bus Name="NPC's" ID="{E341FB7E-30BD-4672-899F-9FFECD0180C6}">
+					<ReferenceList>
+						<Reference Name="AudioDevice" PluginName="System" CompanyID="0" PluginID="174" PluginType="7">
+							<ObjectRef Name="System" ID="{AC62D925-101A-4616-B2EB-3207DE8F21F5}" WorkUnitID="{52E8510F-B3B0-4F49-83E9-0046BF842220}"/>
+						</Reference>
+					</ReferenceList>
+				</Bus>
+				<Bus Name="Player" ID="{315689B8-B0B4-4828-AB8C-AAB1C341F2C0}">
+					<ReferenceList>
+						<Reference Name="AudioDevice" PluginName="System" CompanyID="0" PluginID="174" PluginType="7">
+							<ObjectRef Name="System" ID="{AC62D925-101A-4616-B2EB-3207DE8F21F5}" WorkUnitID="{52E8510F-B3B0-4F49-83E9-0046BF842220}"/>
+						</Reference>
+					</ReferenceList>
+				</Bus>
 			</ChildrenList>
 		</WorkUnit>
 	</Busses>

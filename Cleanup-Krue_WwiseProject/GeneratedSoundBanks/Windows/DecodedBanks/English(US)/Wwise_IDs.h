@@ -18,6 +18,38 @@ namespace AK
         static const AkUniqueID PLAY_FOOTSTEPS = 3854155799U;
     } // namespace EVENTS
 
+    namespace SWITCHES
+    {
+        namespace DIALOGUEVOICES
+        {
+            static const AkUniqueID GROUP = 862515394U;
+
+            namespace SWITCH
+            {
+                static const AkUniqueID CASPIAN = 3915267348U;
+                static const AkUniqueID QUINN = 1448237000U;
+            } // namespace SWITCH
+        } // namespace DIALOGUEVOICES
+
+        namespace FOOTSTEPSOUNDS
+        {
+            static const AkUniqueID GROUP = 1446621239U;
+
+            namespace SWITCH
+            {
+                static const AkUniqueID CARPET = 2412606308U;
+                static const AkUniqueID DIRT = 2195636714U;
+                static const AkUniqueID GRASS = 4248645337U;
+                static const AkUniqueID GRAVEL = 2185786256U;
+                static const AkUniqueID JUMP = 3833651337U;
+                static const AkUniqueID ROCK = 2144363834U;
+                static const AkUniqueID TILES = 3316001432U;
+                static const AkUniqueID WOOD = 2058049674U;
+            } // namespace SWITCH
+        } // namespace FOOTSTEPSOUNDS
+
+    } // namespace SWITCHES
+
     namespace BANKS
     {
         static const AkUniqueID INIT = 1355168291U;

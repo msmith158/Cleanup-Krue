@@ -128,8 +128,8 @@ MonoBehaviour:
         guid: c626862dd069a741847d9cf66cd38ae7
       Path: Events\Default Work Unit\Play_Dialogue
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: 0.7
+      minDuration: 0.7
     - name: Play_Footsteps
       guid: fc4e4db96652504a97f136cf549f01d8
       id: 3854155799
@@ -145,8 +145,8 @@ MonoBehaviour:
         guid: fc4e4db96652504a97f136cf549f01d8
       Path: Events\Default Work Unit\Play_Footsteps
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: 0.7778685
+      minDuration: 0.07464853
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:
@@ -187,8 +187,204 @@ MonoBehaviour:
     ParentPath: Switches\Default Work Unit
     guid: 6e09e05dc621da4b95ced4a0a10a33ff
     GuidInternal: 
-    m_lastTime: -8584611314912943017
-    List: []
+    m_lastTime: -8584610595016296935
+    List:
+    - name: DialogueVoices
+      guid: 69cb58b8b5f1de4b9592900f718c4965
+      id: 862515394
+      PathAndIcons:
+      - ElementName: Switches
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 6e09e05dc621da4b95ced4a0a10a33ff
+      - ElementName: DialogueVoices
+        ObjectType: 11
+        guid: 69cb58b8b5f1de4b9592900f718c4965
+      Path: Switches\Default Work Unit\DialogueVoices
+      values:
+      - name: Caspian
+        guid: e95515cab79f8e489b073fda777516d2
+        id: 3915267348
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: 6e09e05dc621da4b95ced4a0a10a33ff
+        - ElementName: DialogueVoices
+          ObjectType: 11
+          guid: 69cb58b8b5f1de4b9592900f718c4965
+        - ElementName: Caspian
+          ObjectType: 10
+          guid: e95515cab79f8e489b073fda777516d2
+      - name: Quinn
+        guid: f5f3c7e312bddc4ab45f454e4e6e1747
+        id: 1448237000
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: 6e09e05dc621da4b95ced4a0a10a33ff
+        - ElementName: DialogueVoices
+          ObjectType: 11
+          guid: 69cb58b8b5f1de4b9592900f718c4965
+        - ElementName: Quinn
+          ObjectType: 10
+          guid: f5f3c7e312bddc4ab45f454e4e6e1747
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
+    - name: FootstepSounds
+      guid: 37016efcae56714e8594f7500dd2564a
+      id: 1446621239
+      PathAndIcons:
+      - ElementName: Switches
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 6e09e05dc621da4b95ced4a0a10a33ff
+      - ElementName: FootstepSounds
+        ObjectType: 11
+        guid: 37016efcae56714e8594f7500dd2564a
+      Path: Switches\Default Work Unit\FootstepSounds
+      values:
+      - name: Carpet
+        guid: a4ed438b4c1a304cb6fd749eb62a35b3
+        id: 2412606308
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: 6e09e05dc621da4b95ced4a0a10a33ff
+        - ElementName: FootstepSounds
+          ObjectType: 11
+          guid: 37016efcae56714e8594f7500dd2564a
+        - ElementName: Carpet
+          ObjectType: 10
+          guid: a4ed438b4c1a304cb6fd749eb62a35b3
+      - name: Dirt
+        guid: afff0357163e174689ddd49a82c24d11
+        id: 2195636714
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: 6e09e05dc621da4b95ced4a0a10a33ff
+        - ElementName: FootstepSounds
+          ObjectType: 11
+          guid: 37016efcae56714e8594f7500dd2564a
+        - ElementName: Dirt
+          ObjectType: 10
+          guid: afff0357163e174689ddd49a82c24d11
+      - name: Grass
+        guid: 35a5b8fddcd5df4db379a5e9dc4863d9
+        id: 4248645337
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: 6e09e05dc621da4b95ced4a0a10a33ff
+        - ElementName: FootstepSounds
+          ObjectType: 11
+          guid: 37016efcae56714e8594f7500dd2564a
+        - ElementName: Grass
+          ObjectType: 10
+          guid: 35a5b8fddcd5df4db379a5e9dc4863d9
+      - name: Gravel
+        guid: 7f3ea1ff8518b540ac11c4d1d836a39f
+        id: 2185786256
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: 6e09e05dc621da4b95ced4a0a10a33ff
+        - ElementName: FootstepSounds
+          ObjectType: 11
+          guid: 37016efcae56714e8594f7500dd2564a
+        - ElementName: Gravel
+          ObjectType: 10
+          guid: 7f3ea1ff8518b540ac11c4d1d836a39f
+      - name: Jump
+        guid: d610a9cb5d488043a34b42a526f3259a
+        id: 3833651337
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: 6e09e05dc621da4b95ced4a0a10a33ff
+        - ElementName: FootstepSounds
+          ObjectType: 11
+          guid: 37016efcae56714e8594f7500dd2564a
+        - ElementName: Jump
+          ObjectType: 10
+          guid: d610a9cb5d488043a34b42a526f3259a
+      - name: Rock
+        guid: c70f5cc41be5124787352dc649328442
+        id: 2144363834
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: 6e09e05dc621da4b95ced4a0a10a33ff
+        - ElementName: FootstepSounds
+          ObjectType: 11
+          guid: 37016efcae56714e8594f7500dd2564a
+        - ElementName: Rock
+          ObjectType: 10
+          guid: c70f5cc41be5124787352dc649328442
+      - name: Tiles
+        guid: 04b224c53e0e764daa829f273e196829
+        id: 3316001432
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: 6e09e05dc621da4b95ced4a0a10a33ff
+        - ElementName: FootstepSounds
+          ObjectType: 11
+          guid: 37016efcae56714e8594f7500dd2564a
+        - ElementName: Tiles
+          ObjectType: 10
+          guid: 04b224c53e0e764daa829f273e196829
+      - name: Wood
+        guid: c19115a219f9f04e8b3be5666e4e0247
+        id: 2058049674
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: 6e09e05dc621da4b95ced4a0a10a33ff
+        - ElementName: FootstepSounds
+          ObjectType: 11
+          guid: 37016efcae56714e8594f7500dd2564a
+        - ElementName: Wood
+          ObjectType: 10
+          guid: c19115a219f9f04e8b3be5666e4e0247
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
   TriggerWwu:
   - PhysicalPath: Triggers\Default Work Unit.wwu
     PathAndIcons:
