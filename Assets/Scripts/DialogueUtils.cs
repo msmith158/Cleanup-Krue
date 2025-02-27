@@ -1,27 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Mitchel.UISystems;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class DialogueUtils : MonoBehaviour
 {
+    [SerializeField] private Color quinnColour;
+    [SerializeField] private Color caspianColour;
     [Tooltip("Insert in the following order: Neutral, Happy.")] [SerializeField] private Sprite[] quinnSprites;
     [Tooltip("Insert in the following order: Neutral, Happy.")] [SerializeField] private Sprite[] caspianSprites;
 
     // =============== Private value variables ===============
-    private enum SelectedCharacter { Quinn, Caspian }
-    private SelectedCharacter selectedCharacter = SelectedCharacter.Quinn;
+    [HideInInspector] public enum SelectedCharacter { Quinn, Caspian }
+    public SelectedCharacter SelectedCharacterEnum { get; private set; } = SelectedCharacter.Quinn;
     private Dictionary<(SelectedCharacter, string), Sprite> expressionSprites;
     private List<string> savedTag = new List<string>();
+    private string selectedEmotion = "Neutral";
+    private bool characterSwitchReady = false;
 
     // =========== Private object reference variables ===========
     private DialogueSystem dialogueSys;
+    private DialogueTransitions dialogueTransitions;
 
     // Declaring the dictionary of different expressions for each character
     private void Start()
     {
         dialogueSys = GetComponent<DialogueSystem>();
+        dialogueTransitions = GetComponent<DialogueTransitions>();
 
         expressionSprites = new Dictionary<(SelectedCharacter, string), Sprite>
         {
@@ -30,6 +36,18 @@ public class DialogueUtils : MonoBehaviour
             {(SelectedCharacter.Caspian, "Neutral"), caspianSprites[0]},
             {(SelectedCharacter.Caspian, "Happy"), caspianSprites[1]}
         };
+    }
+
+    private void Awake()
+    {
+        DialogueTransitions.SpriteFadeInFinish += ReadyCharacterSwitch;
+        DialogueTransitions.SpriteFadeOutFinish += UnreadyCharacterSwitch;
+    }
+
+    private void OnDisable()
+    {
+        DialogueTransitions.SpriteFadeInFinish -= ReadyCharacterSwitch;
+        DialogueTransitions.SpriteFadeOutFinish -= UnreadyCharacterSwitch;
     }
 
     /// <summary>
@@ -67,13 +85,21 @@ public class DialogueUtils : MonoBehaviour
         switch (input)
         {
             case "Quinn":
-                selectedCharacter = SelectedCharacter.Quinn;
+                SelectedCharacterEnum = SelectedCharacter.Quinn;
                 dialogueSys.dialogueHeader.text = "Quinn";
+                if (characterSwitchReady && expressionSprites.TryGetValue((SelectedCharacterEnum, selectedEmotion), out Sprite quinnSprite))
+                {
+                    dialogueTransitions.ChangeCharacter(quinnSprite, quinnColour);
+                }
                 Debug.Log("Chosen character is Quinn");
                 break;
             case "Caspian":
-                selectedCharacter = SelectedCharacter.Caspian;
+                SelectedCharacterEnum = SelectedCharacter.Caspian;
                 dialogueSys.dialogueHeader.text = "Caspian";
+                if (characterSwitchReady && expressionSprites.TryGetValue((SelectedCharacterEnum, selectedEmotion), out Sprite caspianSprite))
+                {
+                    dialogueTransitions.ChangeCharacter(caspianSprite, caspianColour);
+                }
                 Debug.Log("Chosen character is Caspian");
                 break;
         }
@@ -82,14 +108,15 @@ public class DialogueUtils : MonoBehaviour
     private void ChangeExpression(string input)
     {
         // This will try and get whatever sprite is applicable depending on the character and expression detected
-        if (expressionSprites.TryGetValue((selectedCharacter, input), out Sprite sprite))
+        if (expressionSprites.TryGetValue((SelectedCharacterEnum, input), out Sprite sprite))
         {
             dialogueSys.dialogueCharacterImage.sprite = sprite;
-            Debug.Log($"Character {selectedCharacter} is {input}");
+            selectedEmotion = input;
+            Debug.Log($"Character {SelectedCharacterEnum} is {input}");
         }
         else
         {
-            Debug.LogWarning($"No sprite found for {selectedCharacter} with expression {input}");
+            Debug.LogWarning($"No sprite found for {SelectedCharacterEnum} with expression {input}");
         }
     }
 
@@ -101,5 +128,15 @@ public class DialogueUtils : MonoBehaviour
     private void ChangePanelEffect(string input)
     {
         Debug.Log(input);
+    }
+
+    private void ReadyCharacterSwitch()
+    {
+        characterSwitchReady = true;
+    }
+
+    private void UnreadyCharacterSwitch()
+    {
+        characterSwitchReady = false;
     }
 }

@@ -1319,7 +1319,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1551290408
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1508,8 +1508,8 @@ MonoBehaviour:
   dialoguePanel: {fileID: 4022489094753632290}
   dialogueHeaderPanel: {fileID: 1516556293}
   dialogueHeaderText: {fileID: 5788981247554696741}
-  primarySprite: {fileID: 0}
-  secondarySprite: {fileID: 0}
+  primarySprite: {fileID: 1374877900}
+  secondarySprite: {fileID: 1551290409}
   ReadyToProceed: 0
 --- !u!114 &1600295427
 MonoBehaviour:
@@ -1549,6 +1549,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f152647b1c5931a438c6f821f339c155, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  quinnColour: {r: 1, g: 0.88235295, b: 0.95686275, a: 0.78431374}
+  caspianColour: {r: 1, g: 0.82546234, b: 0.740566, a: 0.78431374}
   quinnSprites:
   - {fileID: 21300000, guid: 908df6b2345e09c42bf227d92027b896, type: 3}
   - {fileID: 21300000, guid: 0271157e4226a5a4e94f60db6059d2d7, type: 3}
@@ -2304,7 +2306,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!222 &6557188813096292328
 CanvasRenderer:
   m_ObjectHideFlags: 0

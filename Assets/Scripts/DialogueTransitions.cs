@@ -10,8 +10,6 @@ namespace Mitchel.UISystems
     public class DialogueTransitions : MonoBehaviour
     {
         public static event Action InteractionFieldReactivate;
-        public static event Action PanelFadeInFinish;
-        public static event Action PanelFadeOutFinish;
         public static event Action SpriteFadeInFinish;
         public static event Action SpriteFadeOutFinish;
         
@@ -52,7 +50,6 @@ namespace Mitchel.UISystems
         private Color transparentTextColour;
         private Color opaqueHeaderPanelColour;
         private Color transparentHeaderPanelColour;
-        public enum FadeInModes { Initialise, Change }
         
         // =========== Private object reference variables ===========
         private Image dialoguePanelImage;
@@ -93,9 +90,9 @@ namespace Mitchel.UISystems
             }
         }
 
-        public void ChangeCharacter()
+        public void ChangeCharacter(Sprite newSprite, Color newColour)
         {
-            
+            StartCoroutine(ChangeCharacterTransition(newSprite, newColour));
         }
 
         private IEnumerator BeginPanelTransitionIn()
@@ -188,7 +185,7 @@ namespace Mitchel.UISystems
             else secondarySprite.color = opaqueTestSpriteColour;
 
             ReadyToProceed = true;
-
+            SpriteFadeInFinish?.Invoke();
             Debug.Log("Sprite transition in is done.");
         }
 
@@ -232,7 +229,78 @@ namespace Mitchel.UISystems
             else secondarySprite.color = transparentTestSpriteColour;
             dialoguePanel.gameObject.SetActive(false);
             InteractionFieldReactivate?.Invoke(); // Send a message to the interaction field to let it know it can re-activate
+            SpriteFadeOutFinish?.Invoke();
             Debug.Log("Sprite transition out is done.");
+        }
+
+        // TODO: When the time is available, make this possible with the BeginSpriteTransitionIn and BeginSpriteTransitionOut coroutines themselves.
+        private IEnumerator ChangeCharacterTransition(Sprite newSprite, Color newColour)
+        {
+            // General initialisation of variables
+            float timeElapsed = 0;
+            float endTime = spriteSlideInCurve.keys[^1].time;
+            RectTransform spriteTransform;
+            Color oldPanelColour = dialoguePanelImage.color;
+            Color oldPanelHeaderColour = dialogueHeaderPanelImage.color;
+
+            // Initialising state-dependent stuff depending on which Image will be used
+            if (spriteSwitch)
+            {
+                spriteTransform = primarySprite.GetComponent<RectTransform>();
+                secondarySprite.sprite = newSprite;
+                secondarySprite.color = transparentTestSpriteColour;
+            }
+            else
+            {
+                spriteTransform = primarySprite.GetComponent<RectTransform>();
+                primarySprite.sprite = newSprite;
+                primarySprite.color = transparentTestSpriteColour;
+            }
+
+            // Initialising the rest of the slide in stuff
+            Vector3 oldSpritePos = new Vector3(spriteTransform.localPosition.x + spriteSlideInAmount,
+                spriteTransform.localPosition.y, spriteTransform.localPosition.z);
+            Vector3 newSpritePos = spriteTransform.localPosition;
+            spriteTransform.localPosition = oldSpritePos;
+
+            while (timeElapsed < endTime)
+            {
+                if (spriteSwitch) 
+                {
+                    secondarySprite.color = Color.Lerp(opaqueTestSpriteColour, transparentTestSpriteColour, timeElapsed / spriteFadeOutTime);
+                    primarySprite.color = Color.Lerp(transparentTestSpriteColour, opaqueTestSpriteColour, timeElapsed / spriteFadeInTime);
+                }
+                else 
+                {
+                    primarySprite.color = Color.Lerp(opaqueTestSpriteColour, transparentTestSpriteColour, timeElapsed / spriteFadeOutTime);
+                    secondarySprite.color = Color.Lerp(transparentTestSpriteColour, opaqueTestSpriteColour, timeElapsed / spriteFadeInTime);
+                }
+                spriteTransform.localPosition =
+                    Vector3.Lerp(oldSpritePos, newSpritePos, spriteSlideInCurve.Evaluate(timeElapsed));
+                dialoguePanelImage.color = Color.Lerp(oldPanelColour, newColour, timeElapsed / spriteFadeInTime);
+                dialogueHeaderPanelImage.color = Color.Lerp(oldPanelHeaderColour, newColour, timeElapsed / spriteFadeInTime);
+
+                timeElapsed += Time.deltaTime;
+                yield return null;
+            }
+            
+            if (spriteSwitch) 
+            {
+                secondarySprite.color = transparentTestSpriteColour;
+                primarySprite.color = opaqueTestSpriteColour;
+                dialoguePanelImage.color = newColour;
+                dialogueHeaderPanelImage.color = newColour;
+                spriteSwitch = false;
+            }
+            else 
+            {
+                primarySprite.color = transparentTestSpriteColour;
+                secondarySprite.color = opaqueTestSpriteColour;
+                spriteSwitch = true;
+            }
+            dialoguePanelImage.color = newColour;
+            dialogueHeaderPanelImage.color = newColour;
+            spriteTransform.localPosition = newSpritePos;
         }
     }
 }
