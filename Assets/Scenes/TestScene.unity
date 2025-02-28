@@ -1434,7 +1434,6 @@ MonoBehaviour:
   dialogueHeaderPanel: {fileID: 1516556293}
   dialogueHeaderText: {fileID: 5788981247554696741}
   primarySprite: {fileID: 1374877900}
-  secondarySprite: {fileID: 0}
   ReadyToProceed: 0
 --- !u!114 &1600295427
 MonoBehaviour:
@@ -1460,6 +1459,7 @@ MonoBehaviour:
   dialogueText: {fileID: 2266857005779756095}
   dialoguePromptImage: {fileID: 1020210031520663200}
   dialogueSfxSource: {fileID: 1090368554}
+  GoodToGo: 0
   dialogueUtils: {fileID: 1600295428}
   dialogueTransitions: {fileID: 1600295426}
 --- !u!114 &1600295428

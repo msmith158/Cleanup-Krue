@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using Mitchel.UISystems;
 using TMPro;
 using UnityEngine;
@@ -26,14 +27,15 @@ public class DialogueSystem : MonoBehaviour
     [SerializeField] private Image dialoguePromptImage;
     [SerializeField] private AudioSource dialogueSfxSource;
     
-    // =============== Private value variables ===============
+    // =============== Internal value variables ===============
+    [HideInInspector] public bool GoodToGo;
     private bool isPrinting;
     private bool skipCheck;
     private bool dialogueEngaged = false;
     private int lineIteration = 0;
     private int lineCharIndex = 0;
     
-    // =========== Private object reference variables ===========
+    // =========== Internal object reference variables ===========
     [SerializeField] private DialogueUtils dialogueUtils;
     [SerializeField] private DialogueTransitions dialogueTransitions;
     private List<string> dialogueLines;
@@ -52,6 +54,7 @@ public class DialogueSystem : MonoBehaviour
     public void InitiateDialogue(TextAsset dialogueBundle)
     {
         dialogueEngaged = true;
+        GoodToGo = true;
         dialogueText.text = "";
         //dialogueHeader.text = "";
         dialoguePromptImage.enabled = false;
@@ -145,6 +148,10 @@ public class DialogueSystem : MonoBehaviour
         isPrinting = true;
         dialogueText.text = "";
         dialoguePromptImage.enabled = false;
+        
+        Debug.Log("Waiting until GoodToGo");
+        while (!GoodToGo) yield return null;
+        Debug.Log("Starting to print new line");
         
         // Setting up the sound effect clip and timing for character printing.
         dialogueSfxSource.clip = DialogueCharSfx;
