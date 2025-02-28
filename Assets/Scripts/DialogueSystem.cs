@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using Mitchel.UISystems;
 using TMPro;
@@ -30,7 +29,6 @@ public class DialogueSystem : MonoBehaviour
     // =============== Private value variables ===============
     private bool isPrinting;
     private bool skipCheck;
-    private bool dialogueSkipped = false;
     private bool dialogueEngaged = false;
     private int lineIteration = 0;
     private int lineCharIndex = 0;
@@ -192,7 +190,6 @@ public class DialogueSystem : MonoBehaviour
             if (skipCheck)
             {
                 dialogueText.text = dialogueLines[lineIteration]; // TODO: Set this up properly once inline argument parsing is implemented
-                dialogueSkipped = true;
                 break;
             }
         }
