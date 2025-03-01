@@ -6,8 +6,14 @@ using UnityEngine;
 
 public class DialogueUtils : MonoBehaviour
 {
+    [Header("Dialogue Box Colours")]
     [SerializeField] private Color quinnColour;
+    [SerializeField] private Color quinnHeaderColour;
+    [Space(5)]
     [SerializeField] private Color caspianColour;
+    [SerializeField] private Color CaspianHeaderColour;
+    
+    [Header("Character Sprites")]
     [Tooltip("Insert in the following order: Neutral, Happy.")] [SerializeField] private Sprite[] quinnSprites;
     [Tooltip("Insert in the following order: Neutral, Happy.")] [SerializeField] private Sprite[] caspianSprites;
 
@@ -89,7 +95,10 @@ public class DialogueUtils : MonoBehaviour
                 dialogueSys.dialogueHeader.text = "Quinn";
                 if (characterSwitchReady && expressionSprites.TryGetValue((SelectedCharacterEnum, selectedEmotion), out Sprite quinnSprite))
                 {
-                    dialogueTransitions.ChangeCharacter(quinnSprite, quinnColour);
+                    dialogueTransitions.QueuedSprite = quinnSprite;
+                    dialogueTransitions.CurrentColour = quinnColour;
+                    dialogueTransitions.CurrentHeaderColour = quinnHeaderColour;
+                    dialogueTransitions.ChangeCharacter();
                 }
                 Debug.Log("Chosen character is Quinn");
                 break;
@@ -98,7 +107,9 @@ public class DialogueUtils : MonoBehaviour
                 dialogueSys.dialogueHeader.text = "Caspian";
                 if (characterSwitchReady && expressionSprites.TryGetValue((SelectedCharacterEnum, selectedEmotion), out Sprite caspianSprite))
                 {
-                    dialogueTransitions.ChangeCharacter(caspianSprite, caspianColour);
+                    dialogueTransitions.QueuedSprite = caspianSprite;
+                    dialogueTransitions.CurrentColour = caspianColour;
+                    dialogueTransitions.ChangeCharacter();
                 }
                 Debug.Log("Chosen character is Caspian");
                 break;
@@ -110,7 +121,11 @@ public class DialogueUtils : MonoBehaviour
         // This will try and get whatever sprite is applicable depending on the character and expression detected
         if (expressionSprites.TryGetValue((SelectedCharacterEnum, input), out Sprite sprite))
         {
-            dialogueSys.dialogueCharacterImage.sprite = sprite;
+            if (!dialogueTransitions.ReadyToProceed)
+            {
+                dialogueTransitions.QueuedSprite = sprite;
+            }
+            else dialogueSys.dialogueCharacterImage.sprite = sprite;
             selectedEmotion = input;
             Debug.Log($"Character {SelectedCharacterEnum} is {input}");
         }

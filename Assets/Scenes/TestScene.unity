@@ -1429,12 +1429,16 @@ MonoBehaviour:
   panelFadeOutTime: 0.1
   npcSpriteOutDelay: 0
   spriteFadeOutTime: 0.1
+  characterFadeOutTime: 0.1
   dialogueSystem: {fileID: 1600295427}
   dialoguePanel: {fileID: 4022489094753632290}
   dialogueHeaderPanel: {fileID: 1516556293}
   dialogueHeaderText: {fileID: 5788981247554696741}
   primarySprite: {fileID: 1374877900}
   ReadyToProceed: 0
+  QueuedSprite: {fileID: 0}
+  CurrentColour: {r: 0, g: 0, b: 0, a: 0}
+  CurrentHeaderColour: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1600295427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1475,12 +1479,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   quinnColour: {r: 1, g: 0.88235295, b: 0.95686275, a: 0.78431374}
+  quinnHeaderColour: {r: 1, g: 0.8066038, b: 0.9302505, a: 0.88235295}
   caspianColour: {r: 1, g: 0.82546234, b: 0.740566, a: 0.78431374}
+  CaspianHeaderColour: {r: 1, g: 0.74592626, b: 0.6273585, a: 0.88235295}
   quinnSprites:
   - {fileID: 21300000, guid: 908df6b2345e09c42bf227d92027b896, type: 3}
-  - {fileID: 21300000, guid: 0271157e4226a5a4e94f60db6059d2d7, type: 3}
+  - {fileID: 21300000, guid: 908df6b2345e09c42bf227d92027b896, type: 3}
   caspianSprites:
-  - {fileID: 21300000, guid: f67cdb6bda04d244bb2563277e759960, type: 3}
+  - {fileID: 21300000, guid: c6ff1a8f3c71368478b726095647ad5f, type: 3}
   - {fileID: 21300000, guid: c6ff1a8f3c71368478b726095647ad5f, type: 3}
 --- !u!1 &1714797497
 GameObject:

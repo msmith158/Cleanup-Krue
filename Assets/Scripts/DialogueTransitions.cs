@@ -32,6 +32,9 @@ namespace Mitchel.UISystems
         [SerializeField] private float npcSpriteOutDelay;
         [SerializeField] private float spriteFadeOutTime;
 
+        [Header("Character Change Transition Settings")] 
+        [SerializeField] private float characterFadeOutTime;
+
         [Header("Object References")] 
         [SerializeField] private DialogueSystem dialogueSystem;
         [SerializeField] private RectTransform dialoguePanel;
@@ -39,7 +42,10 @@ namespace Mitchel.UISystems
         [SerializeField] private TextMeshProUGUI dialogueHeaderText;
         [SerializeField] private Image primarySprite;
 
-        public bool ReadyToProceed = false;
+        [HideInInspector] public bool ReadyToProceed = false;
+        [HideInInspector] public Sprite QueuedSprite;
+        [HideInInspector] public Color CurrentColour;
+        [HideInInspector] public Color CurrentHeaderColour;
         private Color opaquePanelColour;
         private Color transparentPanelColour;
         private Color opaqueTestSpriteColour;
@@ -57,9 +63,6 @@ namespace Mitchel.UISystems
         {
             dialoguePanelImage = dialoguePanel.gameObject.GetComponent<Image>();
             dialogueHeaderPanelImage = dialogueHeaderPanel.gameObject.GetComponent<Image>();
-            opaquePanelColour = dialoguePanelImage.color;
-            transparentPanelColour = new Color(dialoguePanelImage.color.r, dialoguePanelImage.color.g,
-                dialoguePanelImage.color.b, 0);
             opaqueTestSpriteColour = primarySprite.color;
             transparentTestSpriteColour = new Color(primarySprite.color.r, primarySprite.color.g, primarySprite.color.b, 0);
             opaqueTextColour = dialogueHeaderText.color;
@@ -86,9 +89,9 @@ namespace Mitchel.UISystems
             }
         }
 
-        public void ChangeCharacter(Sprite newSprite, Color newColour)
+        public void ChangeCharacter()
         {
-            StartCoroutine(ChangeCharacterTransition(newSprite, newColour));
+            StartCoroutine(ChangeCharacterTransition());
         }
 
         private IEnumerator BeginPanelTransitionIn()
@@ -98,6 +101,10 @@ namespace Mitchel.UISystems
             float endTime = panelSlideInCurve.keys[^1].time;
 
             // Initialise all the fade in stuff
+            opaquePanelColour = CurrentColour;
+            Debug.Log(CurrentColour);
+            transparentPanelColour = new Color(dialoguePanelImage.color.r, dialoguePanelImage.color.g,
+                dialoguePanelImage.color.b, 0);
             dialoguePanelImage.color = transparentPanelColour;
 
             // Initialise all the slide in stuff
@@ -184,6 +191,11 @@ namespace Mitchel.UISystems
         {
             Debug.Log("Begin panel transition out");
             float timeElapsed = 0;
+            
+            // Initialise all the colour stuff
+            opaquePanelColour = dialoguePanelImage.color;
+            transparentPanelColour = new Color(dialoguePanelImage.color.r, dialoguePanelImage.color.g,
+                dialoguePanelImage.color.b, 0);
 
             while (timeElapsed < panelFadeOutTime)
             {
@@ -204,6 +216,11 @@ namespace Mitchel.UISystems
 
             yield return new WaitForSeconds(npcSpriteOutDelay);
             
+            // Initialise all the colour stuff
+            opaqueHeaderPanelColour = dialogueHeaderPanelImage.color;
+            transparentHeaderPanelColour = new Color(dialogueHeaderPanelImage.color.r, dialogueHeaderPanelImage.color.g,
+                dialogueHeaderPanelImage.color.b, 0);
+            
             while (timeElapsed < spriteFadeOutTime)
             {
                 primarySprite.color = Color.Lerp(opaqueTestSpriteColour, transparentTestSpriteColour,
@@ -222,16 +239,19 @@ namespace Mitchel.UISystems
         }
 
         // TODO: When the time is available, make this possible with the BeginSpriteTransitionIn and BeginSpriteTransitionOut coroutines themselves.
-        private IEnumerator ChangeCharacterTransition(Sprite newSprite, Color newColour)
+        private IEnumerator ChangeCharacterTransition()
         {
             // General initialisation of variables
+            ReadyToProceed = false;
             dialogueSystem.GoodToGo = false;
             float timeElapsed = 0;
             float endTime = spriteSlideInCurve.keys[^1].time;
 
             // Initialising the colour fade in stuff
             Color oldPanelColour = dialoguePanelImage.color;
+            Color newPanelColour = CurrentColour;
             Color oldPanelHeaderColour = dialogueHeaderPanelImage.color;
+            Color newPanelHeaderColour = CurrentHeaderColour;
 
             // Initialising the slide in stuff
             RectTransform spriteTransform = primarySprite.GetComponent<RectTransform>();
@@ -239,16 +259,16 @@ namespace Mitchel.UISystems
                 spriteTransform.localPosition.y, spriteTransform.localPosition.z);
             Vector3 newSpritePos = spriteTransform.localPosition;
 
-            while (timeElapsed < spriteFadeOutTime)
+            while (timeElapsed < characterFadeOutTime)
             {
-                primarySprite.color = Color.Lerp(opaqueTestSpriteColour, transparentTestSpriteColour, timeElapsed / spriteFadeOutTime);
+                primarySprite.color = Color.Lerp(opaqueTestSpriteColour, transparentTestSpriteColour, timeElapsed / characterFadeOutTime);
                 Debug.Log($"Fade out timeElapsed: {timeElapsed}");
                 timeElapsed += Time.deltaTime;
                 yield return null;
             }
 
             primarySprite.color = transparentTestSpriteColour;
-            primarySprite.sprite = newSprite;
+            primarySprite.sprite = QueuedSprite;
             spriteTransform.localPosition = oldSpritePos;
             timeElapsed = 0;
             
@@ -256,18 +276,21 @@ namespace Mitchel.UISystems
             {
                 spriteTransform.localPosition =
                     Vector3.Lerp(oldSpritePos, newSpritePos, spriteSlideInCurve.Evaluate(timeElapsed));
-                dialoguePanelImage.color = Color.Lerp(oldPanelColour, newColour, timeElapsed / spriteFadeInTime);
-                dialogueHeaderPanelImage.color = Color.Lerp(oldPanelHeaderColour, newColour, timeElapsed / spriteFadeInTime);
+                primarySprite.color = Color.Lerp(transparentTestSpriteColour, opaqueTestSpriteColour,
+                    timeElapsed / spriteFadeInTime);
+                dialoguePanelImage.color = Color.Lerp(oldPanelColour, CurrentColour, timeElapsed / spriteFadeInTime);
+                dialogueHeaderPanelImage.color = Color.Lerp(oldPanelHeaderColour, newPanelHeaderColour, timeElapsed / spriteFadeInTime);
                 Debug.Log($"Slide in timeElapsed: {timeElapsed}");
                 timeElapsed += Time.deltaTime;
                 yield return null;
             }
 
             primarySprite.color = opaqueTestSpriteColour;
-            dialoguePanelImage.color = newColour;
-            dialogueHeaderPanelImage.color = newColour;
+            dialoguePanelImage.color = newPanelColour;
+            dialogueHeaderPanelImage.color = newPanelHeaderColour;
             spriteTransform.localPosition = newSpritePos;
 
+            ReadyToProceed = true;
             dialogueSystem.GoodToGo = true;
         }
     }
