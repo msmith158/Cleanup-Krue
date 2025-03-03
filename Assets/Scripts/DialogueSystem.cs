@@ -81,17 +81,14 @@ public class DialogueSystem : MonoBehaviour
     {
         if (!isPrinting && dialogueEngaged) 
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E) && dialogueTransitions.ReadyToProceed)
             {
-                if (dialogueEngaged) 
-                {
-                    dialogueSfxSource.PlayOneShot(DialogueProceedSfx);
-                    if (lineIteration >= dialogueLines.Count)
-                        dialogueEngaged = false;
-                }
+                // Play the dialogue proceed sfx
+                dialogueSfxSource.PlayOneShot(DialogueProceedSfx);
 
-                if (lineIteration < dialogueLines.Count)
-                    StartCoroutine(StartDialoguePrinting());
+                // Run it again if it has not finished the list of dialogue lines yet
+                if (lineIteration < dialogueLines.Count) PrintDialogue();
+                // Exit the dialogue if it has finished on the last line
                 else if (lineIteration >= dialogueLines.Count)
                 {
                     dialogueEngaged = false;
@@ -102,11 +99,8 @@ public class DialogueSystem : MonoBehaviour
         }
         else if (isPrinting)
         {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                skipCheck = true;
-                Debug.Log("Skipped dialogue");
-            }
+            // Sets to true so that the system checks this and then skips the printing
+            if (Input.GetKeyDown(KeyCode.E)) skipCheck = true;
         }
     }
 

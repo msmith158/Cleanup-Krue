@@ -61,16 +61,17 @@ namespace Mitchel.UISystems
 
         private void Start()
         {
+            // Object reference assignment
             dialoguePanelImage = dialoguePanel.gameObject.GetComponent<Image>();
             dialogueHeaderPanelImage = dialogueHeaderPanel.gameObject.GetComponent<Image>();
+            
+            // Colour assignment
             opaqueTestSpriteColour = primarySprite.color;
-            transparentTestSpriteColour = new Color(primarySprite.color.r, primarySprite.color.g, primarySprite.color.b, 0);
+            transparentTestSpriteColour = 
+                new Color(primarySprite.color.r, primarySprite.color.g, primarySprite.color.b, 0);
             opaqueTextColour = dialogueHeaderText.color;
             transparentTextColour =
                 new Color(dialogueHeaderText.color.r, dialogueHeaderText.color.g, dialogueHeaderText.color.b, 0);
-            opaqueHeaderPanelColour = dialogueHeaderPanelImage.color;
-            transparentHeaderPanelColour = new Color(dialogueHeaderPanelImage.color.r, dialogueHeaderPanelImage.color.g,
-                dialogueHeaderPanelImage.color.b, 0);
         }
         
         public void EnterDialogue()
@@ -102,9 +103,11 @@ namespace Mitchel.UISystems
 
             // Initialise all the fade in stuff
             opaquePanelColour = CurrentColour;
-            Debug.Log(CurrentColour);
-            transparentPanelColour = new Color(dialoguePanelImage.color.r, dialoguePanelImage.color.g,
-                dialoguePanelImage.color.b, 0);
+            transparentPanelColour = new Color(CurrentColour.r, CurrentColour.g, CurrentColour.b, 0);
+            opaqueHeaderPanelColour = CurrentHeaderColour;
+            transparentHeaderPanelColour = 
+                new Color(CurrentHeaderColour.r, CurrentHeaderColour.g, 
+                    CurrentHeaderColour.b, 0);
             dialoguePanelImage.color = transparentPanelColour;
 
             // Initialise all the slide in stuff
@@ -196,6 +199,9 @@ namespace Mitchel.UISystems
             opaquePanelColour = dialoguePanelImage.color;
             transparentPanelColour = new Color(dialoguePanelImage.color.r, dialoguePanelImage.color.g,
                 dialoguePanelImage.color.b, 0);
+            opaqueHeaderPanelColour = dialogueHeaderPanelImage.color;
+            transparentHeaderPanelColour = new Color(dialogueHeaderPanelImage.color.r, dialogueHeaderPanelImage.color.g,
+                dialogueHeaderPanelImage.color.b, 0);
 
             while (timeElapsed < panelFadeOutTime)
             {

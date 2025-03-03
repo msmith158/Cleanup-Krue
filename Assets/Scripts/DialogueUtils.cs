@@ -44,7 +44,7 @@ public class DialogueUtils : MonoBehaviour
         };
     }
 
-    private void Awake()
+    private void OnEnable()
     {
         DialogueTransitions.SpriteFadeInFinish += ReadyCharacterSwitch;
         DialogueTransitions.SpriteFadeOutFinish += UnreadyCharacterSwitch;
@@ -93,12 +93,13 @@ public class DialogueUtils : MonoBehaviour
             case "Quinn":
                 SelectedCharacterEnum = SelectedCharacter.Quinn;
                 dialogueSys.dialogueHeader.text = "Quinn";
-                if (characterSwitchReady && expressionSprites.TryGetValue((SelectedCharacterEnum, selectedEmotion), out Sprite quinnSprite))
+                if (expressionSprites.TryGetValue((SelectedCharacterEnum, selectedEmotion), out Sprite quinnSprite))
                 {
                     dialogueTransitions.QueuedSprite = quinnSprite;
                     dialogueTransitions.CurrentColour = quinnColour;
                     dialogueTransitions.CurrentHeaderColour = quinnHeaderColour;
-                    dialogueTransitions.ChangeCharacter();
+                    if (characterSwitchReady) 
+                        dialogueTransitions.ChangeCharacter();
                 }
                 Debug.Log("Chosen character is Quinn");
                 break;
@@ -109,7 +110,9 @@ public class DialogueUtils : MonoBehaviour
                 {
                     dialogueTransitions.QueuedSprite = caspianSprite;
                     dialogueTransitions.CurrentColour = caspianColour;
-                    dialogueTransitions.ChangeCharacter();
+                    dialogueTransitions.CurrentHeaderColour = CaspianHeaderColour;
+                    if (characterSwitchReady) 
+                        dialogueTransitions.ChangeCharacter();
                 }
                 Debug.Log("Chosen character is Caspian");
                 break;
