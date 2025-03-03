@@ -1,0 +1,20 @@
+[character=Quinn][sprite=Neutral]I've got a question for you, Caspian.
+[character=Caspian]Go on.
+[character=Quinn]So you know how the other day, I asked you for some ingredients for my healing potion?
+Seeing as you had some ingredients I couldn't find myself.
+[character=Caspian]Right?
+[character=Quinn]And you said you didn't have any left?
+[character=Caspian]Yeah?
+[character=Quinn]Well while you weren't looking, I snuck into your shack and had a check for myself...
+[sprite=Happy]And I found some left over in boxes!
+I thought you said you didn't have any!
+[character=Caspian][sprite=Neutral]Oh come on, Quinn, there were barely any left in there.
+I thought you needed a bigger batch than that.
+[character=Quinn]Well yeah, I did. I just thought you had <i>none</i>, not a few left over.
+[character=Caspian]Okay? Does it matter if you couldn't even use what was left anyway?
+And besides, I was getting more of those ingredients so you could have a new batch.
+[character=Quinn][sprite=Happy]Yeah, I guess you're right.
+[sprite=Neutral]Well anyway, I gotta run.
+[character=Caspian]Alright, bye.
+...
+Wait... <b>YOU ENTERED MY SHACK WITHOUT MY PERMISSION?!</b>
