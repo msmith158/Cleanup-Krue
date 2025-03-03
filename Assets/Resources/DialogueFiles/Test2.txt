@@ -1,2 +1,0 @@
-[character=Caspian][sprite=Neutral]Test line 1
-[character=Quinn][sprite=Neutral]Test line 2
