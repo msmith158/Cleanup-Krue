@@ -33,6 +33,8 @@ This feature allows you to change the expression of a character during a line of
 > [character=Quinn][sprite=Happy]Oh hi there, how are ya?
 > [sprite=Neutral]Aw, having a bad day? That's too bad.
 
+Please note that expressions must be added to a character's list of sprites, which can be found on the "Dialogue Utils" component on the "DialogueManager" GameObject. To add a new expression, expand a character's sprite list, click the + button and drag the sprite you want to implement from the project folder into the field. For expressions not yet added to the dialogue system, please speak to Mitchel.
+
 ## Best Practice for In-line Arguments
 The best way to use the dialogue system is to make sure all parameters are set to what you want them to be—remember that they aren't set until you set them. For example, if you want a neutral Quinn for your dialogue line, make sure that you declare that at least on your first line, otherwise it may still be whatever was on the previous line of dialogue in the previous dialogue file. For example:
 
