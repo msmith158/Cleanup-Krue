@@ -6,7 +6,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 
-[RequireComponent(typeof(Collider))]
+[RequireComponent(typeof(Collider2D))]
 public class TestInteractionField : MonoBehaviour
 {
     public List<TextAsset> TextAssets = new List<TextAsset>();
@@ -51,7 +51,7 @@ public class TestInteractionField : MonoBehaviour
         player.CanMove = true;
     }
     
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.GetComponent<TestController>())
         {
@@ -60,7 +60,7 @@ public class TestInteractionField : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerExit2D(Collider2D other)
     {
         if (other.GetComponent<TestController>())
         {
