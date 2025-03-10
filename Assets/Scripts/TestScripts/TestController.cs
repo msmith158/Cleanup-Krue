@@ -13,14 +13,12 @@ public class TestController : MonoBehaviour
     private float currentSpeed;
     
     [Header("Object References")]
-    private GameObject playerCube;
-    private Rigidbody2D rb;
+    private Rigidbody rb;
     
     // Start is called before the first frame update
     void Start()
     {
-        playerCube = this.gameObject;
-        rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody>();
         currentSpeed = playerSpeed;
     }
 
@@ -34,9 +32,9 @@ public class TestController : MonoBehaviour
             {
                 if (Input.GetKey(KeyCode.A))
                 {
-                    rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
+                    rb.linearVelocity = new Vector3(0, rb.linearVelocity.y, 0);
                 }
-                else rb.linearVelocity = new Vector2(currentSpeed, rb.linearVelocity.y);
+                else rb.linearVelocity = new Vector3(currentSpeed, rb.linearVelocity.y, 0);
             }
 
             // Holding down the left button
@@ -44,9 +42,9 @@ public class TestController : MonoBehaviour
             {
                 if (Input.GetKey(KeyCode.D))
                 {
-                    rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
+                    rb.linearVelocity = new Vector3(0, rb.linearVelocity.y, 0);
                 }
-                else rb.linearVelocity = new Vector2(-currentSpeed, rb.linearVelocity.y);
+                else rb.linearVelocity = new Vector3(-currentSpeed, rb.linearVelocity.y, 0);
             }
 
             // Holding down the Shift key to sprint
@@ -71,12 +69,12 @@ public class TestController : MonoBehaviour
             // Letting go of either key
             if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D))
             {
-                rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
+                rb.linearVelocity = new Vector3(0, rb.linearVelocity.y, 0);
             }
         }
         else if (!CanMove && rb.linearVelocity.x != 0)
         {
-            rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
+            rb.linearVelocity = new Vector3(0, rb.linearVelocity.y, 0);
         }
     }
 
