@@ -10,3 +10,4 @@ Cleanup Krue is a demo for a 2.5D platform sidescroller game that follows a wate
 - Jessamy Chong - Music Designer, Songwriter
 - Erline Alvendo - Environment Artist
 - James Tanubrata - Assistant Programmer
+- Bella Cross - Story Artist, Assistant Animator
