@@ -6,12 +6,11 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 
-[RequireComponent(typeof(Collider2D))]
+[RequireComponent(typeof(Collider))]
 public class TestInteractionField : MonoBehaviour
 {
-    public List<TextAsset> TextAssets = new List<TextAsset>();
     public UnityEvent OnInteract;
-    [SerializeField] private TestController player;
+    [SerializeField] private Custom2DController player;
     [SerializeField] private TextMeshPro interactionText;
     private bool withinRange = false;
     private bool isDialogueActivated = false;
@@ -39,7 +38,7 @@ public class TestInteractionField : MonoBehaviour
             if (!isDialogueActivated && withinRange)
             {
                 OnInteract.Invoke();
-                player.CanMove = false;
+                player.canMove = false;
                 isDialogueActivated = true;
             }
         }
@@ -48,21 +47,21 @@ public class TestInteractionField : MonoBehaviour
     private void ReactivateField()
     {
         isDialogueActivated = false;
-        player.CanMove = true;
+        player.canMove = true;
     }
     
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<TestController>())
+        if (other.GetComponent<Custom2DController>())
         {
             interactionText.enabled = true;
             withinRange = true;
         }
     }
 
-    private void OnTriggerExit2D(Collider2D other)
+    private void OnTriggerExit(Collider other)
     {
-        if (other.GetComponent<TestController>())
+        if (other.GetComponent<Custom2DController>())
         {
             interactionText.enabled = false;
             withinRange = false;
