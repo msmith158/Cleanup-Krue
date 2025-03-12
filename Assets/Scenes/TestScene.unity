@@ -3795,7 +3795,7 @@ MonoBehaviour:
         m_MethodName: InitiateDialogue
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 4900000, guid: 498721a7fe61b0740ac99a0d476f0921,
+          m_ObjectArgument: {fileID: 4900000, guid: b8ce26301a60ceb4e976eebd499316b7,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.TextAsset, UnityEngine
           m_IntArgument: 0

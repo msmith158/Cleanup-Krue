@@ -38,7 +38,7 @@ public class Custom2DController : MonoBehaviour
     // Interal variables
     [HideInInspector] public bool canMove = true;
     private CharacterController controller;
-    private float horizontalSpeed = 0f;    
+    private float horizontalSpeed = 0f;
     private float verticalVelocity = 0f;    
     private int jumpCount = 0;              
     private float jumpTimer = 0f;            
@@ -104,6 +104,7 @@ public class Custom2DController : MonoBehaviour
             jumpInputReleased = true;
         }
 
+        //TODO: Fix the issue that results in the player falling at the same speed as before they touched the ground from jumping.
         if (Input.GetButtonDown("Jump") && canMove && jumpInputReleased && jumpTimer <= 0f && jumpCount < maxJumps)
         {
             verticalVelocity = jumpSpeed;
@@ -112,6 +113,7 @@ public class Custom2DController : MonoBehaviour
             jumpTimer = jumpDelay;
         }
 
+        //TODO: Fix the issue that results in the player falling at the same speed as before they touched the ground from jumping.
         verticalVelocity -= gravity * Time.deltaTime;
 
         Vector3 horizontalMove = new Vector3(horizontalSpeed, 0, 0);
