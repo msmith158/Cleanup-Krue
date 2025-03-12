@@ -38,8 +38,22 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: ae7651ae196b494fa9e732f51b4e0ddd
     GuidInternal: 
-    m_lastTime: -8584611350652292822
+    m_lastTime: -8584610579750383035
     List:
+    - name: Enemies
+      guid: a67107099b01fa448469fc3f7babb52a
+      id: 2242381963
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ae7651ae196b494fa9e732f51b4e0ddd
+      - ElementName: Enemies
+        ObjectType: 2
+        guid: a67107099b01fa448469fc3f7babb52a
+      Path: Master-Mixer Hierarchy\Default Work Unit\Enemies
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
       id: 3803692087
@@ -54,6 +68,62 @@ MonoBehaviour:
         ObjectType: 2
         guid: d8a41415a61d2a41a17e75ca0c2149f3
       Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus
+    - name: Music
+      guid: e77a4b1eecaa7f47b6310e37cbc3e5dd
+      id: 3991942870
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ae7651ae196b494fa9e732f51b4e0ddd
+      - ElementName: Music
+        ObjectType: 2
+        guid: e77a4b1eecaa7f47b6310e37cbc3e5dd
+      Path: Master-Mixer Hierarchy\Default Work Unit\Music
+    - name: NPC's
+      guid: 7efb41e3bd307246899f9ffecd0180c6
+      id: 3627635880
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ae7651ae196b494fa9e732f51b4e0ddd
+      - ElementName: NPC's
+        ObjectType: 2
+        guid: 7efb41e3bd307246899f9ffecd0180c6
+      Path: Master-Mixer Hierarchy\Default Work Unit\NPC's
+    - name: Player
+      guid: b8895631b4b02848ab8caab1c341f2c0
+      id: 1069431850
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ae7651ae196b494fa9e732f51b4e0ddd
+      - ElementName: Player
+        ObjectType: 2
+        guid: b8895631b4b02848ab8caab1c341f2c0
+      Path: Master-Mixer Hierarchy\Default Work Unit\Player
+    - name: SFX
+      guid: 9ea9847ac1a6d54fa1e2e180d9ea42cd
+      id: 393239870
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ae7651ae196b494fa9e732f51b4e0ddd
+      - ElementName: SFX
+        ObjectType: 2
+        guid: 9ea9847ac1a6d54fa1e2e180d9ea42cd
+      Path: Master-Mixer Hierarchy\Default Work Unit\SFX
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     PathAndIcons:
@@ -94,7 +164,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: c86c8a9377c77244ae62d7a159a37b9c
     GuidInternal: 
-    m_lastTime: -8584611291686247268
+    m_lastTime: -8584598562517086396
     List:
     - name: Play_Crying_Baby
       guid: ba7758fcf743f043973bbf9ed1b07a41
@@ -147,6 +217,23 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0.7778685
       minDuration: 0.07464853
+    - name: Play_Music_Test
+      guid: 51388be22d3058499811de27445c430b
+      id: 3608471722
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: c86c8a9377c77244ae62d7a159a37b9c
+      - ElementName: Play_Music_Test
+        ObjectType: 3
+        guid: 51388be22d3058499811de27445c430b
+      Path: Events\Default Work Unit\Play_Music_Test
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:
@@ -400,7 +487,7 @@ MonoBehaviour:
     m_lastTime: -8584611350650325854
     List: []
   ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 0500000006000000070000000b0000000c0000000d0000000e0000000f0000001000000011000000ba000000bb000000
+  ExpandedWaapiItemIds: 0500000006000000070000000a0000000b0000000c0000000d0000000e0000000f0000001000000011000000ba000000bb000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0

@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{B6CBD692-12EC-CDBA-0932-48F63C40C91F}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{E5082CA6-AC80-F6A8-2B42-980E5224C35F}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -19,7 +19,12 @@
 				</AudioDevices>
 			</Plugins>
 			<Busses>
+				<Bus Id="393239870" Name="SFX"/>
+				<Bus Id="1069431850" Name="Player"/>
+				<Bus Id="2242381963" Name="Enemies"/>
+				<Bus Id="3627635880" Name="NPC's"/>
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
+				<Bus Id="3991942870" Name="Music"/>
 			</Busses>
 			<SwitchGroups>
 				<SwitchGroup Id="862515394" Name="DialogueVoices">
@@ -42,7 +47,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{20488D8B-279D-90D7-C01D-651E354BCB2B}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{B3B034F7-09C6-969D-A828-D17C693D52EF}">
 			<ShortName>main</ShortName>
 			<Path>main.bnk</Path>
 			<Media>
@@ -84,7 +89,7 @@
 				</File>
 				<File Id="416377204" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Carpet\Carpet footsteps.wav</ShortName>
-					<CachePath>SFX/Carpet/Carpet footsteps_281EA04D.wem</CachePath>
+					<CachePath>SFX/Carpet/Carpet footsteps_F5AC26D6.wem</CachePath>
 				</File>
 				<File Id="463328824" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Gravel 6.wav</ShortName>
@@ -112,7 +117,7 @@
 				</File>
 				<File Id="583177940" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Carpet\Carpet footsteps.wav</ShortName>
-					<CachePath>SFX/Carpet/Carpet footsteps_76069BA5.wem</CachePath>
+					<CachePath>SFX/Carpet/Carpet footsteps_5F369594.wem</CachePath>
 				</File>
 				<File Id="685529120" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Gravel 5.wav</ShortName>
@@ -148,7 +153,7 @@
 				</File>
 				<File Id="747732187" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Carpet\Carpet footsteps.wav</ShortName>
-					<CachePath>SFX/Carpet/Carpet footsteps_5395BC35.wem</CachePath>
+					<CachePath>SFX/Carpet/Carpet footsteps_5D2EBCAC.wem</CachePath>
 				</File>
 				<File Id="788600796" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Grass 1.wav</ShortName>
@@ -176,7 +181,7 @@
 				</File>
 				<File Id="832127125" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Carpet\Carpet footsteps.wav</ShortName>
-					<CachePath>SFX/Carpet/Carpet footsteps_B0604495.wem</CachePath>
+					<CachePath>SFX/Carpet/Carpet footsteps_4965F0C1.wem</CachePath>
 				</File>
 				<File Id="918856414" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Wood 3.wav</ShortName>
@@ -184,15 +189,15 @@
 				</File>
 				<File Id="919983285" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Carpet\Carpet footsteps.wav</ShortName>
-					<CachePath>SFX/Carpet/Carpet footsteps_8A53B80D.wem</CachePath>
+					<CachePath>SFX/Carpet/Carpet footsteps_CFF41836.wem</CachePath>
 				</File>
 				<File Id="929096786" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Carpet\Carpet footsteps.wav</ShortName>
-					<CachePath>SFX/Carpet/Carpet footsteps_A9FD49BA.wem</CachePath>
+					<CachePath>SFX/Carpet/Carpet footsteps_20566DEC.wem</CachePath>
 				</File>
 				<File Id="937659024" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Carpet\Carpet footsteps.wav</ShortName>
-					<CachePath>SFX/Carpet/Carpet footsteps_35F5051F.wem</CachePath>
+					<CachePath>SFX/Carpet/Carpet footsteps_C97B1191.wem</CachePath>
 				</File>
 				<File Id="961599361" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Wood 5.wav</ShortName>
@@ -353,5 +358,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{9F717AD0-6A4B-6C88-581E-5B34F35FE2AB}</FileHash>
+	<FileHash>{B5D470D0-4394-1260-59D9-686EF38C18D3}</FileHash>
 </SoundBanksInfo>
