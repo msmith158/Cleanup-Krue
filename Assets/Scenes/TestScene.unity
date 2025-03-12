@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 16218103}
   - component: {fileID: 16218102}
   m_Layer: 0
-  m_Name: ParallaxTest2
+  m_Name: ParallaxTest3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -817,7 +817,7 @@ GameObject:
   - component: {fileID: 404530653}
   - component: {fileID: 404530652}
   m_Layer: 0
-  m_Name: ParallaxTest4
+  m_Name: ParallaxTest5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1674,7 +1674,7 @@ GameObject:
   - component: {fileID: 1012453573}
   - component: {fileID: 1012453572}
   m_Layer: 0
-  m_Name: ParallaxTest1 (1)
+  m_Name: ParallaxTest2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1765,7 +1765,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 5}
-  m_LocalScale: {x: 0.3, y: 1, z: 3}
+  m_LocalScale: {x: 0.5, y: 1, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -3590,7 +3590,7 @@ GameObject:
   - component: {fileID: 2007838443}
   - component: {fileID: 2007838442}
   m_Layer: 0
-  m_Name: ParallaxTest3
+  m_Name: ParallaxTest4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
