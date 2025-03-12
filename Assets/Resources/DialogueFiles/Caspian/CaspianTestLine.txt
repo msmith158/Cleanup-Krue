@@ -1,0 +1,3 @@
+[character=Caspain][sprite=Neutral]I love bombs!!!
+[character=Quinn]Yes Caspian, we know you love bombs.
+You can be quiet about it now.
