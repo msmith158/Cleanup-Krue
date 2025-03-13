@@ -1,1 +1,23 @@
-[character=Quinn][sprite=Neutral]Test
+[character=Quinn][sprite=Neutral] Dew, back so soon? 
+What happened— did King talk your ear off or rope you into some grand, slightly ridiculous plan?
+[character=Dewdrop][sprite=Unhappy] Both and now I need to get into the sewers.
+[character=Quinn][sprite=Neutral] Why the sewers of all place?
+[character=Dewdrop] A creature stole the village's supplies and they locked it away in the sewers. But King lost the key—
+[character=Quinn] That stick loses things <i>for sport</i>.
+[character=Dewdrop]  —and said the grate's too small for anything but liquid to go through. He said you might have something to help?
+[character=Quinn] Well dear, you're in luck. 
+I might have a tome tucked away that talks about Spirits' abilities. Old thing, dustier than a drought season, but it could have what you need.
+[character=Dewdrop][sprite=Happy] Really? Can I see it?
+[character=Quinn][sprite=Neutral] Ah-ah. One think you learn about me, Dewdrop, I don't do handouts. 
+Trade is the name of the game.
+[character=Dewdrop][sprite=Neutral] What do you want for it?
+[character=Quinn][sprite=Neutral] Remember that Magfly nest just past the road? If you would mind taking care of it for me I'd much appreciate it. 
+A couple splashes of that fancy water of yours should so the trick—purify the nest, Maglies clear out, everyone's happy. 
+<i>Then</i> we'll talk tomes.
+[character=Dewdrop][sprite=Confused] Thats it? Just a few splashes?
+[character=Quinn][sprite=Happy] Easy, huh? I'd do it myself but sadly im all out of purification magic. Tragic really.
+[character=Dewdrop][sprite=Confused] I thought you said I was <i>running on fumes</i>?
+[character=Quinn][sprite=Neutral] I'd say you have just enough power in you to do simple purifications.
+[character=Dewdrop] Alright I accept the trade.
+[character=Quinn][sprite=Happy] That's the spirit! No pun intended. 
+[sprite=Neutral] Now get moving, you've got buzzing menaces to take care of.
