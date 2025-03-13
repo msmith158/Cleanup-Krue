@@ -130,7 +130,7 @@ public class DialogueUtils : MonoBehaviour
                 SelectedCharacterEnum = SelectedCharacter.Caspian;
                 dialogueSys.dialogueHeader.text = "Caspian";
 
-                if (characterSwitchReady && expressionSprites.TryGetValue((SelectedCharacterEnum, selectedEmotion), out Sprite caspianSprite))
+                if (expressionSprites.TryGetValue((SelectedCharacterEnum, selectedEmotion), out Sprite caspianSprite))
                 {
                     dialogueTransitions.QueuedSprite = caspianSprite;
                     dialogueTransitions.CurrentColour = caspianColour;
@@ -145,7 +145,7 @@ public class DialogueUtils : MonoBehaviour
                 SelectedCharacterEnum = SelectedCharacter.Kingg;
                 dialogueSys.dialogueHeader.text = "Kingg of Sticks";
 
-                if (characterSwitchReady && expressionSprites.TryGetValue((SelectedCharacterEnum, selectedEmotion), out Sprite kinggSprite))
+                if (expressionSprites.TryGetValue((SelectedCharacterEnum, selectedEmotion), out Sprite kinggSprite))
                 {
                     dialogueTransitions.QueuedSprite = kinggSprite;
                     dialogueTransitions.CurrentColour = kinggColour;
@@ -160,7 +160,7 @@ public class DialogueUtils : MonoBehaviour
                 SelectedCharacterEnum = SelectedCharacter.Dewdrop;
                 dialogueSys.dialogueHeader.text = "Dewdrop";
 
-                if (characterSwitchReady && expressionSprites.TryGetValue((SelectedCharacterEnum, selectedEmotion), out Sprite dewdropSprite))
+                if (expressionSprites.TryGetValue((SelectedCharacterEnum, selectedEmotion), out Sprite dewdropSprite))
                 {
                     dialogueTransitions.QueuedSprite = dewdropSprite;
                     dialogueTransitions.CurrentColour = dewdropColour;

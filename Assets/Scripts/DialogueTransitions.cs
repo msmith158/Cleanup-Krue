@@ -144,6 +144,7 @@ namespace Mitchel.UISystems
             float timeElapsed = 0;
             float endTime = spriteSlideInCurve.keys[^1].time;
             var spriteTransform = primarySprite.GetComponent<RectTransform>();
+            primarySprite.sprite = QueuedSprite;
 
             // Initialising all the slide in stuff
             Vector3 oldSpritePos = new Vector3(spriteTransform.localPosition.x + spriteSlideInAmount,
@@ -219,6 +220,7 @@ namespace Mitchel.UISystems
         {
             Debug.Log("Begin sprite transition out");
             float timeElapsed = 0;
+            dialogueHeaderText.text = "";
 
             yield return new WaitForSeconds(npcSpriteOutDelay);
             
