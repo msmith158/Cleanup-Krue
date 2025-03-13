@@ -1,0 +1,12 @@
+[character=Quinn][sprite=Neutral]Test
+[character=Dewdrop][sprite=Neutral] Hello?
+[characater=Quinn][sprite=surprised] Well now, I didn't expect company today, and certainly not a half-drowned water spirit.
+[sprite=neutral] You good, or should I fish you up a towel?
+[character=Dewdrop][sprite=neutral] I'm… I think Im ok. But where am I? My head is a little fuzzy. I know Im meant to be doing something important.
+[character=Quinn] You're confused, I get it. Spirits don't usually just… wake up outta nowhere. Alright, lets get you up to speed.
+ Name's Quin. Merchant, traveller, collector of oddities. And you?
+[character=Dewdrop] Dewdrop.
+[character=Quinn] See? We're making progress already.
+As for where you are, you're on Krue. Once lush and lively, but now? In need of a fixer-upper. 
+But luckily for us, you, my friend, have woken up in the middle of all mess.
+[character=Dewdrop][sprite=Confused] That sounds awful… But what does that have to do with me?
