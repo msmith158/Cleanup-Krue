@@ -3010,10 +3010,10 @@ MonoBehaviour:
   quinnHeaderColour: {r: 1, g: 0.8066038, b: 0.9302505, a: 0.88235295}
   caspianColour: {r: 1, g: 0.82546234, b: 0.740566, a: 0.78431374}
   caspianHeaderColour: {r: 1, g: 0.7009005, b: 0.5613208, a: 0.88235295}
-  kinggColour: {r: 1, g: 1, b: 1, a: 0.78431374}
-  kinggHeaderColour: {r: 1, g: 1, b: 1, a: 0.88235295}
-  dewdropColour: {r: 1, g: 1, b: 1, a: 0.78431374}
-  dewdropHeaderColour: {r: 1, g: 1, b: 1, a: 0.88235295}
+  kinggColour: {r: 0.764151, g: 0.67439896, b: 0.62357605, a: 0.78431374}
+  kinggHeaderColour: {r: 0.7075472, g: 0.5606024, b: 0.48393556, a: 0.88235295}
+  dewdropColour: {r: 0.7028302, g: 0.84378874, b: 1, a: 0.78431374}
+  dewdropHeaderColour: {r: 0.5707547, g: 0.76824737, b: 1, a: 0.88235295}
   quinnSprites:
   - {fileID: 21300000, guid: 908df6b2345e09c42bf227d92027b896, type: 3}
   - {fileID: 21300000, guid: 908df6b2345e09c42bf227d92027b896, type: 3}
