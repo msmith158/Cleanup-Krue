@@ -55,12 +55,12 @@ public class DialogueUtils : MonoBehaviour
             {(SelectedCharacter.Kingg, "Happy"), kinggSprites[1]},
             {(SelectedCharacter.Kingg, "Surprised"), kinggSprites[2]},
             {(SelectedCharacter.Kingg, "Scared"), kinggSprites[3]},
-            {(SelectedCharacter.Dewdrop, "Neutral"), caspianSprites[0]},
-            {(SelectedCharacter.Dewdrop, "Happy"), caspianSprites[1]},
-            {(SelectedCharacter.Dewdrop, "Surprised"), kinggSprites[2]},
-            {(SelectedCharacter.Dewdrop, "Scared"), kinggSprites[3]},
-            {(SelectedCharacter.Dewdrop, "Unhappy"), kinggSprites[4]},
-            {(SelectedCharacter.Dewdrop, "Confused"), kinggSprites[5]}
+            {(SelectedCharacter.Dewdrop, "Neutral"), dewdropSprites[0]},
+            {(SelectedCharacter.Dewdrop, "Happy"), dewdropSprites[1]},
+            {(SelectedCharacter.Dewdrop, "Surprised"), dewdropSprites[2]},
+            {(SelectedCharacter.Dewdrop, "Scared"), dewdropSprites[3]},
+            {(SelectedCharacter.Dewdrop, "Unhappy"), dewdropSprites[4]},
+            {(SelectedCharacter.Dewdrop, "Confused"), dewdropSprites[5]}
         };
     }
 

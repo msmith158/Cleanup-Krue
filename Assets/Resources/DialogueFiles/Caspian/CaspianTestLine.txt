@@ -1,3 +1,3 @@
-[character=Caspain][sprite=Neutral]I <i>love</i> bombs!!!
+[character=Caspian][sprite=Neutral]I <i>love</i> bombs!!!
 [character=Quinn]Yes Caspian, we <b>know</b> you love bombs.
 You can <u>be quiet</u> about it now.

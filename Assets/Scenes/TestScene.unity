@@ -3121,9 +3121,11 @@ MonoBehaviour:
   quinnColour: {r: 1, g: 0.88235295, b: 0.95686275, a: 0.78431374}
   quinnHeaderColour: {r: 1, g: 0.8066038, b: 0.9302505, a: 0.88235295}
   caspianColour: {r: 1, g: 0.82546234, b: 0.740566, a: 0.78431374}
-  CaspianHeaderColour: {r: 1, g: 0.74592626, b: 0.6273585, a: 0.88235295}
-  kinggColour: {r: 0, g: 0, b: 0, a: 0}
-  kinggHeaderColour: {r: 0, g: 0, b: 0, a: 0}
+  caspianHeaderColour: {r: 1, g: 0.7009005, b: 0.5613208, a: 0.88235295}
+  kinggColour: {r: 1, g: 1, b: 1, a: 0.78431374}
+  kinggHeaderColour: {r: 1, g: 1, b: 1, a: 0.88235295}
+  dewdropColour: {r: 1, g: 1, b: 1, a: 0.78431374}
+  dewdropHeaderColour: {r: 1, g: 1, b: 1, a: 0.88235295}
   quinnSprites:
   - {fileID: 21300000, guid: 908df6b2345e09c42bf227d92027b896, type: 3}
   - {fileID: 21300000, guid: 908df6b2345e09c42bf227d92027b896, type: 3}
@@ -3382,21 +3384,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!115 &1739257430
-MonoScript:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  serializedVersion: 7
-  m_DefaultReferences: {}
-  m_Icon: {fileID: 0}
-  m_Type: 0
-  m_ExecutionOrder: 0
-  m_ClassName: AkInitializer
-  m_Namespace: 
-  m_AssemblyName: AK.Wwise.Unity.MonoBehaviour
 --- !u!1 &1744018424
 GameObject:
   m_ObjectHideFlags: 0
@@ -3726,7 +3713,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2064745115}
-  - component: {fileID: 2064745114}
   m_Layer: 0
   m_Name: WwiseGlobal
   m_TagString: Untagged
@@ -3734,31 +3720,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2064745114
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2064745113}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1739257430}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  InitializationSettings: {fileID: 0}
-  basePath: 
-  language: 
-  defaultPoolSize: 0
-  lowerPoolSize: 0
-  streamingPoolSize: 0
-  memoryCutoffThreshold: 0
-  monitorPoolSize: 0
-  monitorQueuePoolSize: 0
-  callbackManagerBufferSize: 0
-  spatialAudioPoolSize: 0
-  maxSoundPropagationDepth: 0
-  engineLogging: 0
 --- !u!4 &2064745115
 Transform:
   m_ObjectHideFlags: 0
@@ -3883,7 +3844,7 @@ MonoBehaviour:
         m_MethodName: InitiateDialogue
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 4900000, guid: 498721a7fe61b0740ac99a0d476f0921,
+          m_ObjectArgument: {fileID: 4900000, guid: b8ce26301a60ceb4e976eebd499316b7,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.TextAsset, UnityEngine
           m_IntArgument: 0
@@ -4276,7 +4237,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!222 &6557188813096292328
 CanvasRenderer:
   m_ObjectHideFlags: 0
