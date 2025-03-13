@@ -116,6 +116,9 @@ public class DialogueUtils : MonoBehaviour
                 }
                 Debug.Log("Chosen character is Caspian");
                 break;
+            default:
+                Debug.LogError($"No character data found for \"{input}\". Selected character will remain as \"{SelectedCharacterEnum}\".");
+                break;
         }
     }
 
