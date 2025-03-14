@@ -51,7 +51,7 @@ Currently, attaching dialogue files to Cleanup Krue is only possible in the test
 - "Quinn"
 - "Caspian"
 - "Kingg"
-- "Dewdrop"\
+- "Dewdrop"
 
 **Default:** "Dewdrop"
 
@@ -63,7 +63,7 @@ Currently, attaching dialogue files to Cleanup Krue is only possible in the test
 - "Surprised"
 - "Scared"
 - "Unhappy"
-- "Confused"\
+- "Confused"
 
 **Default:** "Neutral"
 
@@ -73,6 +73,6 @@ Currently, attaching dialogue files to Cleanup Krue is only possible in the test
 - "Slow"
 - "Normal"
 - "Fast"
-- "Very fast"\
+- "Very fast"
 
 **Default:** "Normal"
