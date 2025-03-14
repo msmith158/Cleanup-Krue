@@ -22,22 +22,6 @@ The dialogue system supports rich text functionality, which supports formatting 
 > <i>Ah, Mr. Goldsworth! Good to see you, my fellow chap!</i>
 > <u>Same for you, my friend. Shall I fetch you a tea?</u>
 
-### Declaring Characters for Initiation & Change
-You can change whichever character is speaking on a new line by using an in-line argument. In-line arguments are enclosed with square brackets ("[ ]"). To change a character, you must specifically type "character=" followed by the character you want to change to, e.g. Quinn or Caspian. You can then put your line of dialogue immediately after this argument, <b>without a space preceeding it.</b> For example:
-
-> [character=Quinn]Welcome to Watching Paint Dry: The Game
-> [character=Caspian]In this game, you sit and watch paint dry.
-
-Note that you do not have to redeclare a character that was already present on the last line of dialogue as it will automatically carry over into the next. In order to change the colour of the text box, find the "Dialogue Utils" component under the "DialogueManager" GameObject.
-
-### Declaring Expressions for Initiation & Change
-This feature allows you to change the expression of a character during a line of dialogue. Just like declaring characters, you must declare expressions with in-line arguments. These should come after declaring a character or on a new line where a character is not declared. To change expression, you must type "sprite=" followed by the emotion you want to change to, <b>without a space preceeding it.</b> For example:
-
-> [character=Quinn][sprite=Happy]Oh hi there, how are ya?
-> [sprite=Neutral]Aw, having a bad day? That's too bad.
-
-Please note that expressions must be added to a character's list of sprites, which can be found on the "Dialogue Utils" component on the "DialogueManager" GameObject. To add a new expression, expand a character's sprite list, click the + button and drag the sprite you want to implement from the project folder into the field. For expressions not yet added to the dialogue system, please speak to Mitchel.
-
 ### Using In-line Arguments
 The dialogue system has a custom-built in-line arguments system to allow for the change of certain settings during dialogue, such as character sprites and text speed. An in-line argument is enclosed with square brackets "[ ]" and follow a very specific format, which starts with what you want to change, e.g. "character", followed by equals "=", followed by the value you want to change that setting to, e.g. "Quinn"; for example:
 
@@ -48,7 +32,7 @@ You can also chain in-line arguments, which is ideal for cases such as if you wa
 
 > [character=Quinn][sprite=Happy]Hello, traveller!
 
-Please see "Further Notes" for how to change the settings of in-line arguments.
+Also note that once you have declared a setting, it does not need to be redeclared unless you want to change it to something else. Please see "Further Notes" for how to change the settings of in-line arguments as well as things like character expressions.
 
 ### Best Practice for In-line Arguments
 The best way to use the dialogue system is to make sure all parameters are set to what you want them to be—remember that they aren't set until you set them. For example, if you want a neutral Quinn for your dialogue line, make sure that you declare that at least on your first line, otherwise it may still be whatever was on the previous line of dialogue in the previous dialogue file.
@@ -57,7 +41,7 @@ The best way to use the dialogue system is to make sure all parameters are set t
 Currently, attaching dialogue files to Cleanup Krue is only possible in the test scene while a proper interaction system has not yet been programmed. To test your dialogue file, find the "NPC" GameObject and attach your .txt file to the "On Interact()" event (make sure to click the + icon to add a new list entry if there isn't already one).
 
 ### Further Notes
-- Settings for dialogue system components, e.g. in-line arguments, can be changed on the DialogueManager object, which can usually be found under the Systems GameObject in the scene.
+- Settings for dialogue system components, e.g. in-line arguments or character expressions, can be changed on the DialogueManager object, which can usually be found under the Systems GameObject in the scene.
 - Be advised that in-line arguments are a custom feature designed by Mitchel Smith. If an issue is encountered with using in-line arguments or you would like to request an extra feature, please speak to Mitchel.
 
 ## In-Line Argument Syntax
