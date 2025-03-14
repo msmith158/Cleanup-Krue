@@ -51,7 +51,7 @@ Currently, attaching dialogue files to Cleanup Krue is only possible in the test
 
 ## In-Line Argument Syntax
 ### Changing Characters
-**Declaration:** "character"
+**Declaration:** "character"\
 **Values:**
 - "Quinn"
 - "Caspian"
@@ -59,7 +59,7 @@ Currently, attaching dialogue files to Cleanup Krue is only possible in the test
 - "Dewdrop"
 
 ### Changing Expressions
-**Declaration:** "sprite"
+**Declaration:** "sprite"\
 **Values:**
 - "Neutral"
 - "Happy"
@@ -69,7 +69,7 @@ Currently, attaching dialogue files to Cleanup Krue is only possible in the test
 - "Confused"
 
 ### Changing Text Speed
-**Declaration:** "textspeed"
+**Declaration:** "textspeed"\
 **Values:**
 - "Slow"
 - "Normal"
