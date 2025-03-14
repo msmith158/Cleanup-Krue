@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using Mitchel.UISystems;
 using TMPro;
 using UnityEngine;
@@ -11,7 +10,7 @@ using UnityEngine.UI;
 public class DialogueSystem : MonoBehaviour
 {
     [Header("General Settings")] 
-    [SerializeField] private float charDelayTime;
+    public float CharDelayTime;
     [SerializeField] private bool pauseAtFullStop;
     [SerializeField] private float fullStopPauseTime;
     [SerializeField] private bool pauseAtComma;
@@ -32,6 +31,7 @@ public class DialogueSystem : MonoBehaviour
     
     // =============== Internal value variables ===============
     [HideInInspector] public bool GoodToGo;
+    [HideInInspector] public float OriginalCharDelayTime;
     private bool isPrinting;
     private bool skipCheck;
     private bool dialogueEngaged = false;
@@ -47,6 +47,8 @@ public class DialogueSystem : MonoBehaviour
     {
         dialogueUtils = GetComponent<DialogueUtils>();
         dialogueTransitions = GetComponent<DialogueTransitions>();
+
+        OriginalCharDelayTime = CharDelayTime;
     }
 
     /// <summary>
@@ -199,7 +201,7 @@ public class DialogueSystem : MonoBehaviour
             else if (c == ',' && pauseAtComma && (i != dialogueLines[lineIteration].Length - 1 && dialogueLines[lineIteration][i] != '<'))
                 yield return new WaitForSeconds(commaPauseTime);
 
-            yield return new WaitForSeconds(charDelayTime);
+            yield return new WaitForSeconds(CharDelayTime);
             if (skipCheck)
             {
                 dialogueText.text = dialogueLines[lineIteration]; // TODO: Set this up properly once inline argument parsing is implemented

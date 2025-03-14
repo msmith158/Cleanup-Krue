@@ -18,6 +18,11 @@ public class DialogueUtils : MonoBehaviour
     [Space(5)]
     [SerializeField] private Color dewdropColour;
     [SerializeField] private Color dewdropHeaderColour;
+
+    [Header("Inline Arguments Settings")] 
+    [SerializeField] private float slowTextSpeedMultiplier;
+    [SerializeField] private float fastTextSpeedMultiplier;
+    [SerializeField] private float veryFastTextSpeedMultiplier;
     
     [Header("Character Sprites")]
     [Tooltip("Insert in the following order: Neutral, Happy, Surprised.")] [SerializeField] private Sprite[] quinnSprites;
@@ -101,6 +106,12 @@ public class DialogueUtils : MonoBehaviour
                     break;
                 case "paneleffect":
                     ChangePanelEffect(savedTag[++i]);
+                    break;
+                case "textspeed":
+                    ChangeTextSpeed(savedTag[++i]);
+                    break;
+                default:
+                    Debug.LogError($"Unknown argument \"{tag}\". Did you misspell your argument?");
                     break;
             }
         }
@@ -207,6 +218,28 @@ public class DialogueUtils : MonoBehaviour
     private void ChangePanelEffect(string input)
     {
         Debug.Log(input);
+    }
+
+    private void ChangeTextSpeed(string input)
+    {
+        switch (input)
+        {
+            case "Slow":
+                dialogueSys.CharDelayTime /= slowTextSpeedMultiplier;
+                break;
+            case "Normal":
+                dialogueSys.CharDelayTime = dialogueSys.OriginalCharDelayTime;
+                break;
+            case "Fast":
+                dialogueSys.CharDelayTime /= fastTextSpeedMultiplier;
+                break;
+            case "VeryFast":
+                dialogueSys.CharDelayTime /= veryFastTextSpeedMultiplier;
+                break;
+            default:
+                Debug.LogError($"INLINE ARGUMENT ERROR: Text speed {input} does not exist.");
+                break;
+        }
     }
 
     private void ReadyCharacterSwitch()
