@@ -102,6 +102,12 @@ public class DialogueUtils : MonoBehaviour
                 case "paneleffect":
                     ChangePanelEffect(savedTag[++i]);
                     break;
+                case "textspeed":
+                    ChangeTextSpeed(savedTag[++i]);
+                    break;
+                default:
+                    Debug.LogError($"Unknown argument \"{tag}\". Did you misspell your argument?");
+                    break;
             }
         }
     }
@@ -207,6 +213,24 @@ public class DialogueUtils : MonoBehaviour
     private void ChangePanelEffect(string input)
     {
         Debug.Log(input);
+    }
+
+    private void ChangeTextSpeed(string input)
+    {
+        switch (input)
+        {
+            case "Slow":
+                break;
+            case "Normal":
+                break;
+            case "Fast":
+                break;
+            case "VeryFast":
+                break;
+            default:
+                Debug.LogError($"INLINE ARGUMENT ERROR: Text speed {input} does not exist.");
+                break;
+        }
     }
 
     private void ReadyCharacterSwitch()
