@@ -2982,6 +2982,8 @@ MonoBehaviour:
   charDelayTime: 0.03
   pauseAtFullStop: 1
   fullStopPauseTime: 0.5
+  pauseAtComma: 1
+  commaPauseTime: 0.2
   DialogueCharSfx: {fileID: 8300000, guid: 3750698a050b75d47996e731aa5139a1, type: 3}
   DialogueProceedSfx: {fileID: 8300000, guid: f2b32649e70addf41a10002785361ce7, type: 3}
   isFixedSfxTiming: 0
@@ -4150,7 +4152,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -140, y: -50}
+  m_AnchoredPosition: {x: -140, y: -40}
   m_SizeDelta: {x: 980, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1660057539 &9223372036854775807

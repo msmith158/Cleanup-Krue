@@ -14,6 +14,8 @@ public class DialogueSystem : MonoBehaviour
     [SerializeField] private float charDelayTime;
     [SerializeField] private bool pauseAtFullStop;
     [SerializeField] private float fullStopPauseTime;
+    [SerializeField] private bool pauseAtComma;
+    [SerializeField] private float commaPauseTime;
 
     [Header("Audio Settings")] 
     public AudioClip DialogueCharSfx;
@@ -144,27 +146,22 @@ public class DialogueSystem : MonoBehaviour
         dialogueText.text = "";
         dialoguePromptImage.enabled = false;
         
-        Debug.Log("Waiting until GoodToGo");
         while (!GoodToGo) yield return null;
-        Debug.Log("Starting to print new line");
         
         // Setting up the sound effect clip and timing for character printing.
         dialogueSfxSource.clip = DialogueCharSfx;
         if (isFixedSfxTiming)
             StartCoroutine(PlaySFXFixed());
 
+        // Trim the edges of the dialogue line of any whitespace characters before starting.
+        dialogueLines[lineIteration] = dialogueLines[lineIteration].TrimStart();
+        dialogueLines[lineIteration] = dialogueLines[lineIteration].TrimEnd();
+
         // This is the actual dialogue printing code
         for (int i = 0; i < dialogueLines[lineIteration].Length; i++)
         {
-            // Detect if the first character is a space before starting when there shouldn't be
-            /*if (Char.IsWhiteSpace(dialogueLines[lineIteration][lineCharIndex]))
-            {
-                Debug.Log("Skipped character");
-                continue;
-            }*/
-            
             char c = dialogueLines[lineIteration][i];
-            
+
             // Detect formatting tags and insert them immediately so they don't get printed
             if (c == '<')
             {
@@ -193,10 +190,15 @@ public class DialogueSystem : MonoBehaviour
             // Play the sound
             if (!isFixedSfxTiming) 
                 dialogueSfxSource.Play();
+
             // Pause the dialogue for sentence-ending punctuation.
             // Note the "is, or" instead of multiple "||"
-            if (c is '.' or '?' or '!' && pauseAtFullStop && (i != dialogueLines[lineIteration].Length - 1 || dialogueLines[lineIteration][i] != '<')) 
+            if (c is '.' or '?' or '!' && pauseAtFullStop && (i != dialogueLines[lineIteration].Length - 1 && dialogueLines[lineIteration][i] != '<'))
                 yield return new WaitForSeconds(fullStopPauseTime);
+            // Pause the dialogue system for a separate time for commas.
+            else if (c == ',' && pauseAtComma && (i != dialogueLines[lineIteration].Length - 1 && dialogueLines[lineIteration][i] != '<'))
+                yield return new WaitForSeconds(commaPauseTime);
+
             yield return new WaitForSeconds(charDelayTime);
             if (skipCheck)
             {
