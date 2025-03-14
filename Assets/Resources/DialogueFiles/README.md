@@ -65,7 +65,7 @@ Currently, attaching dialogue files to Cleanup Krue is only possible in the test
 - "Unhappy"
 - "Confused"\
 
-**Default:** Neutral
+**Default:** "Neutral"
 
 ### Changing Text Speed
 **Declaration:** "textspeed"\
@@ -75,4 +75,4 @@ Currently, attaching dialogue files to Cleanup Krue is only possible in the test
 - "Fast"
 - "Very fast"\
 
-**Default:** Normal
+**Default:** "Normal"
