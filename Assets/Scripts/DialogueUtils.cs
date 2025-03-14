@@ -11,15 +11,23 @@ public class DialogueUtils : MonoBehaviour
     [SerializeField] private Color quinnHeaderColour;
     [Space(5)]
     [SerializeField] private Color caspianColour;
-    [SerializeField] private Color CaspianHeaderColour;
+    [SerializeField] private Color caspianHeaderColour;
+    [Space(5)]
+    [SerializeField] private Color kinggColour;
+    [SerializeField] private Color kinggHeaderColour;    
+    [Space(5)]
+    [SerializeField] private Color dewdropColour;
+    [SerializeField] private Color dewdropHeaderColour;
     
     [Header("Character Sprites")]
-    [Tooltip("Insert in the following order: Neutral, Happy.")] [SerializeField] private Sprite[] quinnSprites;
-    [Tooltip("Insert in the following order: Neutral, Happy.")] [SerializeField] private Sprite[] caspianSprites;
+    [Tooltip("Insert in the following order: Neutral, Happy, Surprised.")] [SerializeField] private Sprite[] quinnSprites;
+    [Tooltip("Insert in the following order: Neutral, Happy, Surprised.")] [SerializeField] private Sprite[] caspianSprites;
+    [Tooltip("Insert in the following order: Neutral, Happy, Surprised, Scared.")] [SerializeField] private Sprite[] kinggSprites;
+    [Tooltip("Insert in the following order: Neutral, Happy, Surprised, Scared, Unhappy, Confused.")] [SerializeField] private Sprite[] dewdropSprites;
 
     // =============== Private value variables ===============
-    [HideInInspector] public enum SelectedCharacter { Quinn, Caspian }
-    public SelectedCharacter SelectedCharacterEnum { get; private set; } = SelectedCharacter.Quinn;
+    [HideInInspector] public enum SelectedCharacter { Quinn, Caspian, Kingg, Dewdrop }
+    public SelectedCharacter SelectedCharacterEnum { get; private set; } = SelectedCharacter.Dewdrop;
     private Dictionary<(SelectedCharacter, string), Sprite> expressionSprites;
     private List<string> savedTag = new List<string>();
     private string selectedEmotion = "Neutral";
@@ -39,8 +47,20 @@ public class DialogueUtils : MonoBehaviour
         {
             {(SelectedCharacter.Quinn, "Neutral"), quinnSprites[0]},
             {(SelectedCharacter.Quinn, "Happy"), quinnSprites[1]},
+            {(SelectedCharacter.Quinn, "Surprised"), quinnSprites[2]},
             {(SelectedCharacter.Caspian, "Neutral"), caspianSprites[0]},
-            {(SelectedCharacter.Caspian, "Happy"), caspianSprites[1]}
+            {(SelectedCharacter.Caspian, "Happy"), caspianSprites[1]},
+            {(SelectedCharacter.Caspian, "Surprised"), caspianSprites[2]},
+            {(SelectedCharacter.Kingg, "Neutral"), kinggSprites[0]},
+            {(SelectedCharacter.Kingg, "Happy"), kinggSprites[1]},
+            {(SelectedCharacter.Kingg, "Surprised"), kinggSprites[2]},
+            {(SelectedCharacter.Kingg, "Scared"), kinggSprites[3]},
+            {(SelectedCharacter.Dewdrop, "Neutral"), dewdropSprites[0]},
+            {(SelectedCharacter.Dewdrop, "Happy"), dewdropSprites[1]},
+            {(SelectedCharacter.Dewdrop, "Surprised"), dewdropSprites[2]},
+            {(SelectedCharacter.Dewdrop, "Scared"), dewdropSprites[3]},
+            {(SelectedCharacter.Dewdrop, "Unhappy"), dewdropSprites[4]},
+            {(SelectedCharacter.Dewdrop, "Confused"), dewdropSprites[5]}
         };
     }
 
@@ -90,9 +110,11 @@ public class DialogueUtils : MonoBehaviour
     {
         switch (input)
         {
+            // TODO: After project timeline, find a way to shorten ChangeCharacter function
             case "Quinn":
                 SelectedCharacterEnum = SelectedCharacter.Quinn;
                 dialogueSys.dialogueHeader.text = "Quinn";
+
                 if (expressionSprites.TryGetValue((SelectedCharacterEnum, selectedEmotion), out Sprite quinnSprite))
                 {
                     dialogueTransitions.QueuedSprite = quinnSprite;
@@ -103,19 +125,52 @@ public class DialogueUtils : MonoBehaviour
                 }
                 Debug.Log("Chosen character is Quinn");
                 break;
+
             case "Caspian":
                 SelectedCharacterEnum = SelectedCharacter.Caspian;
                 dialogueSys.dialogueHeader.text = "Caspian";
-                if (characterSwitchReady && expressionSprites.TryGetValue((SelectedCharacterEnum, selectedEmotion), out Sprite caspianSprite))
+
+                if (expressionSprites.TryGetValue((SelectedCharacterEnum, selectedEmotion), out Sprite caspianSprite))
                 {
                     dialogueTransitions.QueuedSprite = caspianSprite;
                     dialogueTransitions.CurrentColour = caspianColour;
-                    dialogueTransitions.CurrentHeaderColour = CaspianHeaderColour;
+                    dialogueTransitions.CurrentHeaderColour = caspianHeaderColour;
                     if (characterSwitchReady) 
                         dialogueTransitions.ChangeCharacter();
                 }
                 Debug.Log("Chosen character is Caspian");
                 break;
+
+            case "Kingg":
+                SelectedCharacterEnum = SelectedCharacter.Kingg;
+                dialogueSys.dialogueHeader.text = "Kingg of Sticks";
+
+                if (expressionSprites.TryGetValue((SelectedCharacterEnum, selectedEmotion), out Sprite kinggSprite))
+                {
+                    dialogueTransitions.QueuedSprite = kinggSprite;
+                    dialogueTransitions.CurrentColour = kinggColour;
+                    dialogueTransitions.CurrentHeaderColour = kinggHeaderColour;
+                    if (characterSwitchReady)
+                        dialogueTransitions.ChangeCharacter();
+                }
+                Debug.Log("Chosen character is Kingg");
+                break;
+
+            case "Dewdrop":
+                SelectedCharacterEnum = SelectedCharacter.Dewdrop;
+                dialogueSys.dialogueHeader.text = "Dewdrop";
+
+                if (expressionSprites.TryGetValue((SelectedCharacterEnum, selectedEmotion), out Sprite dewdropSprite))
+                {
+                    dialogueTransitions.QueuedSprite = dewdropSprite;
+                    dialogueTransitions.CurrentColour = dewdropColour;
+                    dialogueTransitions.CurrentHeaderColour = dewdropHeaderColour;
+                    if (characterSwitchReady)
+                        dialogueTransitions.ChangeCharacter();
+                }
+                Debug.Log("Chosen character is Dewdrop");
+                break;
+
             default:
                 Debug.LogError($"No character data found for \"{input}\". Selected character will remain as \"{SelectedCharacterEnum}\".");
                 break;
@@ -132,20 +187,23 @@ public class DialogueUtils : MonoBehaviour
                 dialogueTransitions.QueuedSprite = sprite;
             }
             else dialogueSys.dialogueCharacterImage.sprite = sprite;
+
             selectedEmotion = input;
             Debug.Log($"Character {SelectedCharacterEnum} is {input}");
         }
         else
         {
-            Debug.LogWarning($"No sprite found for {SelectedCharacterEnum} with expression {input}");
+            Debug.LogWarning($"No sprite found for {SelectedCharacterEnum} with expression \"{input}\"");
         }
     }
 
+    // TODO: Implement text effects for dialogue system
     private void ChangeTextEffect(string input)
     {
         Debug.Log(input);
     }
 
+    // TODO: Implement panel effects for dialogue system
     private void ChangePanelEffect(string input)
     {
         Debug.Log(input);
