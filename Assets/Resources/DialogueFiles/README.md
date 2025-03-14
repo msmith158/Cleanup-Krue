@@ -38,15 +38,26 @@ This feature allows you to change the expression of a character during a line of
 
 Please note that expressions must be added to a character's list of sprites, which can be found on the "Dialogue Utils" component on the "DialogueManager" GameObject. To add a new expression, expand a character's sprite list, click the + button and drag the sprite you want to implement from the project folder into the field. For expressions not yet added to the dialogue system, please speak to Mitchel.
 
-### Best Practice for In-line Arguments
-The best way to use the dialogue system is to make sure all parameters are set to what you want them to be—remember that they aren't set until you set them. For example, if you want a neutral Quinn for your dialogue line, make sure that you declare that at least on your first line, otherwise it may still be whatever was on the previous line of dialogue in the previous dialogue file. For example:
+### Using In-line Arguments
+The dialogue system has a custom-built in-line arguments system to allow for the change of certain settings during dialogue, such as character sprites and text speed. An in-line argument is enclosed with square brackets "[ ]" and follow a very specific format, which starts with what you want to change, e.g. "character", followed by equals "=", followed by the value you want to change that setting to, e.g. "Quinn"; for example:
 
-> [character=Quinn][sprite=Neutral]Hi there, what can I get for ya?
+> [character=Quinn]
+> [textspeed=Normal]
+
+You can also chain in-line arguments, which is ideal for cases such as if you want a specific emotion on a specific character; for example:
+
+> [character=Quinn][sprite=Happy]Hello, traveller!
+
+Please see "Further Notes" for how to change the settings of in-line arguments.
+
+### Best Practice for In-line Arguments
+The best way to use the dialogue system is to make sure all parameters are set to what you want them to be—remember that they aren't set until you set them. For example, if you want a neutral Quinn for your dialogue line, make sure that you declare that at least on your first line, otherwise it may still be whatever was on the previous line of dialogue in the previous dialogue file.
 
 ### Attaching Your Dialogue File to the Game
 Currently, attaching dialogue files to Cleanup Krue is only possible in the test scene while a proper interaction system has not yet been programmed. To test your dialogue file, find the "NPC" GameObject and attach your .txt file to the "On Interact()" event (make sure to click the + icon to add a new list entry if there isn't already one).
 
 ### Further Notes
+- Settings for dialogue system components, e.g. in-line arguments, can be changed on the DialogueManager object, which can usually be found under the Systems GameObject in the scene.
 - Be advised that in-line arguments are a custom feature designed by Mitchel Smith. If an issue is encountered with using in-line arguments or you would like to request an extra feature, please speak to Mitchel.
 
 ## In-Line Argument Syntax
@@ -56,7 +67,8 @@ Currently, attaching dialogue files to Cleanup Krue is only possible in the test
 - "Quinn"
 - "Caspian"
 - "Kingg"
-- "Dewdrop"
+- "Dewdrop"\
+**Default:** "Dewdrop"
 
 ### Changing Expressions
 **Declaration:** "sprite"\
@@ -66,7 +78,8 @@ Currently, attaching dialogue files to Cleanup Krue is only possible in the test
 - "Surprised"
 - "Scared"
 - "Unhappy"
-- "Confused"
+- "Confused"\
+**Default:** Neutral
 
 ### Changing Text Speed
 **Declaration:** "textspeed"\
@@ -74,4 +87,5 @@ Currently, attaching dialogue files to Cleanup Krue is only possible in the test
 - "Slow"
 - "Normal"
 - "Fast"
-- "Very fast"
+- "Very fast"\
+**Default:** Normal
