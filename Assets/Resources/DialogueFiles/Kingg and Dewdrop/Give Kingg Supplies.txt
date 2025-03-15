@@ -1,0 +1,4 @@
+[character=Kingg][sprite=Happy] Ah-ha! Our hero returns and with treasures in hand!
+[character=Dewdrop][sprite=Neutral] With how happy you are it makes it seem like I found the lost crown of Krue or something. It's just a sail and a net.
+[character=Kingg][sprite=Neutral] To us, dear Dewdrop, they are treasures. 
+For now, we set off on a most noble task—cleaning this disastrous excuse for a damn. I'll rally what folks we have and get to work!

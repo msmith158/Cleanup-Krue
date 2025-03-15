@@ -1,0 +1,17 @@
+[character=Dewdrop][sprite=Scared] Again? What is causing it?
+[character=Kingg][sprite=Scared] There is no need for panic! We are merely experiencing… ah… a minor geological inconvenience!
+[character=Dewdrop][sprite=Neutral] That's not how earthquakes work, especially one like that.
+[character=Kingg][sprite=Neutral] Fine, fine! If you must know… 
+There's another creature further east of the town. We all may have been… ignoring it. We hoped it would just… go away.
+[character=Dewdrop][sprite=Confused] What kind of creature?
+[character=Kingg][sprite=Neutral] It's a serpent that used to live in the dam and surrounding lake. 
+It kept our land protected from other nasty things but… a few years ago it suddenly changed and went on a rampage. 
+Eventually it moved upstream and made a new home there. It's been causing rock slides and earthquakes ever since.
+[character=Dewdrop][sprite=Neutral] Why haven't you done anything about it?
+[character=Kingg][sprite=Neutral] It's a little outside my area of expertise, you see.
+ The serpent is ancient and predates our village. None of my people are capable nor willing to take on such a task as calming an old beast.
+[character=Dewdrop][sprite=Neutral] …Maybe there's something I can do about?
+[character=Kingg][sprite=Happy] Oh would you?!
+[character=Dewdrop][sprite=Neutral] If it used to live in these waters, it might have been affected by the pollution in it. 
+If I go to this creature and try to calm it down, I'll need your people to clean out this water as fast as you can.
+[character=Kingg][sprite=Happy] Of course! We shall do our part! Farewell and good luck, Dewdrop.
