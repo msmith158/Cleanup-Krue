@@ -1,0 +1,15 @@
+[character=Quinn][sprite=Neutral] Well looks who's back and not covered in Magflies! I take it things went well?
+[character=Dewdrop][sprite=Neutral] The nest is purified. The Magflies left. Nobody got hurt.
+[character=Quinn][sprite=Neutral] I could say 'I knew you had it in you' but that'd ruin my reputation as a sceptical businessman. 
+[sprite=Happy]So let's pretend I'm shocked by your success and get to business.
+[sprite=Neutral] Your reward, as promised. Ancient spirit-y knowledge. 
+There's an ability unique to water spirits that allows you to turn liquid. Should help you slip through those sewer grates like a nice, refreshing puddle.
+[character=Dewdrop][sprite=Surprised] Odd you seem to know so much about us Spirits.
+[character=Quinn][sprite=Neutral] When you travel as much as me, you pick up a thing or two. 
+I can also read.
+[character=Dewdrop][sprite=Neutral] Do you know what's in the sewers, then?
+[character=Quinn][sprite=Neutral] Not exactly. 
+That beast could be <i>anything</i>. And though I love a good mystery I don't like the idea of sending you to your doom. 
+So if it looks too nasty, try sneaking past it instead of picking a fight.
+[character=Dewdrop][sprite=Neutral] Noted.
+[character=Quinn][sprite=Neutral] Oh, before you go, I'd suggest making a trip to see <i>Caspian</i> the potion trader. Wouldn't hurt to have a potion or two in your pocket. And tell that raw chicken I said 'hi'.
