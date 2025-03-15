@@ -1,0 +1,27 @@
+[character=Dewdrop][sprite=Neutral] Uh… excuse me?
+[character=Kingg][sprite=Surprised] Oh! Hello new face! 
+[sprite=Neutral] Who are you traveller?
+[character=Dewdrop][sprite=Neutral] I'm Dewdrop. 
+I was told I could find the head of the village here?
+[character=Kingg] Oh, my dear, you have found me. 
+I am Kingg, leader of this fine fearful folk!
+[character=Dewdrop] Perfect. So, I need a sail and a net for the ship down at the damn. I hear your village has supplies.
+[character=Kingg][sprite=Surprised] Ah. Yes. We did have them. Wonderful, sturdy, reliable supplies. 
+[sprite=Scared] Until… It came.
+[character=Dewdrop][sprite=Confused] It?
+[character=Kingg][sprite=Scared] That creature—that beast! 
+It came through town one night, taking our goods, and scared the village half to death! Naturally, we took action. 
+[sprite=Neutral]And by 'we,' I mean 'I,' because no one else had the fortitude to face such a menace.
+[character=Dewdrop][sprite=Confused] So… What happened? Where is it now?
+[character=Kingg][sprite=Surprised] We, uh… We locked it in the sewers.
+[character=Dewdrop][sprite=Unhappy] You just locked it up?
+[character=Kingg][sprite=Neutral] Obviously! What else would one do with a terrifying, supply-stealing creature? Give it a room at the inn?
+[character=Dewdrop] If it has your supplies, then that is where I have to go… Where is the key to the sewers?
+[character=Kingg] Well, you see… I had the key. And then the key had the misfortune of, um… disappearing
+[character=Dewdrop][sprite=Unhappy] You lost the key?
+[character=Kingg][sprite=Neutral] Lost is such a strong word! It's more like… absconded?
+[character=Dewdrop][sprite=Unhappy] Great. So what now?
+[character=Kingg][sprite=Neutral] Only something liquid can slip through the sewer grate and reach the beast's den. 
+So unless you have some magical water powers that let you turn into water, you'll have to find another way down.
+You could ask Quinn for help? He's always got such oddly useful items.
+
